@@ -54,11 +54,8 @@ export default function Home() {
         <div />
         <div />
       </div>
-    </div> : <><nav className="navbar navbar-expand-md fixed-top top-nav">
+    </div> : <><nav className="navbar navbar-expand-md fixed-top top-nav light-header">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
-          <Image src="/img/logo.png" alt='barber shop logo' width='100' height='100' style={{ marginTop: '1.5rem', maxWidth: '100%' }}/>
-        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -72,36 +69,39 @@ export default function Home() {
             <Image alt='barber shop menu' src="/img/icons/menu.png" width='100' height='100'/>
           </span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="navbar-collapse" id="navbarSupportedContent">        
           <ul className="navbar-nav m-auto text-sm-center text-md-center">
-            <li className="nav-item">
-              <a className="nav-link" href="#home" onClick={handleClick}>
-                Home <span className="sr-only">(current)</span>
+            <li className="nav-item margin-right">
+              <a className="nav-link" href="#home" onClick={(e) => handleClick(e)}>
+                Home
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item margin-right">
               <a className="nav-link" href="#services" onClick={handleClick}>
-                Services
+                Usługi
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item margin-right">
               <a className="nav-link" href="#about" onClick={handleClick}>
-                About
+                Ceny
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#price" onClick={handleClick}>
-                Prices
+              <a className="navbar-brand" href="/">
+                <Image src="/img/logo.png" alt='barber shop logo' width='110' height='110' style={{  maxWidth: '100%' }}/>
+              </a>
+            <li className="nav-item margin-left">
+              <a className="nav-link" href="#galery" onClick={handleClick}>
+                Galeria
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item margin-left">
               <a className="nav-link" href="#testimonial" onClick={handleClick}>
-                Testimonials
+                Opinie
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#contact" onClick={handleClick}>
-                Contact
+            <li className="nav-item margin-left">
+              <a className="nav-link" href="#contactinfo" onClick={handleClick}>
+                Kontakt
               </a>
             </li>
           </ul>
@@ -175,7 +175,7 @@ export default function Home() {
         </div>
       </div>
       <div className="container">
-      <div className="row" style={{ backgroundColor: 'black' }}>
+      <div className="row" style={{ backgroundColor: '#0f0a05' }}>
         <div className="col-lg-4 col-md-6 col-sm-12">
           <h4 className="p-3 text-white text-center" ><strong>Adres:</strong></h4>
           <div className="p-3 text-white text-center" style={{ fontSize: '18px' }}>Rynek 4 <br/> 63-440 Raszków</div>

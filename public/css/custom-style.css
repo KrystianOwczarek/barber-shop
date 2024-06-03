@@ -7,6 +7,7 @@ body, html{
 	overflow-x: hidden;
 	height: 100%;
 	width:100%;
+	scroll-behavior: smooth;
 }
 body{
 	font-size: 1rem;
@@ -16,16 +17,17 @@ body{
 /* ========== Universal Stylings ========== */
 h1,h2,h3,h4,h5{
 	position: relative;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Abril Fatface', cursive;
+	font-weight: 700;
 }
 h6{
 	position: relative;
 }
 .bg-primary{
-	background-color: #93362e!important;
+	background-color: #93362e !important;
 }
 .bg-dark{
-	background-color: #0f0a05!important;
+	background-color: #0f0a05 !important;
 }
 .bg-white{
 	background-color: #fff;
@@ -34,13 +36,13 @@ h6{
 	color: #074052;
 }
 .text-primary{
-	color: #93362e!important;
+	color: #93362e !important;
 }
 a.text-primary{
 	color: #93362e;
 }
 a.text-primary:hover{
-	color: #916634!important;
+	color: #916634 !important;
 	text-decoration: none;
 }
 .btn{
@@ -142,18 +144,27 @@ i.box-circle-solid{
 	top:0;
 	z-index: -1;
 }
+.row>*{
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+.barber-color{
+	color: #BD3518;
+}
+.copy-content-sec{
+	height: 650px !important;
+}
 .list-group-item{
 	text-transform: uppercase;
-	margin-top: 20px;
-	
-	font-size: 14px;
+	margin-top: 30px;
+	font-size: 16px;
+	font-weight: bold;
 }
 .bg-right{
 	background-repeat: no-repeat;
 	background-position: top right;
 }
 .sec-bg-02{
-	background:url("../img/sec-bg-02.jpg");
 	background-repeat: no-repeat;
 	background-position: top left;	
 	background-size: cover;
@@ -165,13 +176,19 @@ i.box-circle-solid{
 	background-size: cover;
 }
 .sec-bg-04{
-	background:url("../img/sec-bg-03.jpg");
+	background:url("../img/sec-bg-04.jpg");
 	background-repeat: no-repeat;
 	background-position: top left;	
 	background-size: cover;
 }
+.sec-bg-05{
+	background:url("../img/901.jpg");
+	background-repeat: repeat;
+	background-position: top center;	
+	background-size: contain;
+}
 .sec-bg-04{
-	background-color: black;
+	background-color: #fff !important;
 }
 .parallax{
 	background-attachment: fixed!important;
@@ -223,7 +240,7 @@ i.box-circle-solid{
 }
 .top-nav .navbar-nav li .nav-link {
     color: #fff;
-    font-size: 14px;
+    font-size: 18px;
     padding:6px 26px;
     margin:6px 5px 0;
     font-weight: 400;
@@ -231,6 +248,22 @@ i.box-circle-solid{
     transition: 0.2s ease-in;
 	-webkit-transition: 0.2s ease-in;
 	-moz-transition: 0.2s ease-in;
+}
+.nav-item{
+	width: 140px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.navbar-brand{
+	margin-right: 1rem;
+	margin-left: 1rem;
+}
+.margin-right{
+	margin-right: 1rem;
+}
+.margin-left{
+	margin-left: 1rem;
 }
 .top-nav li a.nav-link:hover, .top-nav .nav-item.active a.nav-link{
     color: #fff;
@@ -251,13 +284,25 @@ i.box-circle-solid{
 	padding: 6px 15px;
 }
 #services{
+	scroll-margin-top: 120px; /* zmień na wysokość Twojej nawigacji */
 	border-bottom: 20px solid #93362e;
 }
+#about{
+	scroll-margin-top: 120px; /* zmień na wysokość Twojej nawigacji */
+}
 #testimonial{
+	scroll-margin-top: 120px; /* zmień na wysokość Twojej nawigacji */
+}
+#galery{
+	scroll-margin-top: 120px; /* zmień na wysokość Twojej nawigacji */
+	border-bottom: 20px solid #93362e;
+}
+#contactinfo{
+	scroll-margin-top: 120px; /* zmień na wysokość Twojej nawigacji */
 	border-bottom: 20px solid #93362e;
 }
 .top-nav.light-header{
-	height: 60px;
+	height: 120px;
 	background: rgba(0,0,0,0.6);
 	box-shadow: 0 0 10px rgba(0,0,0,0.23);
 	transition: 0.5s ease-in;
@@ -266,7 +311,7 @@ i.box-circle-solid{
 	z-index: 9999;
 }
 #contactinfo:before {
-	background: #000000;
+	background: #0f0a05!important;
 }
 .top-nav.light-header .navbar-brand{
 	color: #fff;
@@ -295,7 +340,7 @@ i.box-circle-solid{
 }
 .intro-bg{
 	background:url("../img/banner.png");
-	background-repeat:no-repeat;
+	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
 }
@@ -339,8 +384,16 @@ i.box-circle-solid{
 	position: relative;
 	z-index: 1;
 }
+.flex{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.carousel .control-dots .dot{
+	background-color: #000 !important;
+}
 .info-section h2{
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 3rem;
 }
 .info-section .price-count{
@@ -873,7 +926,7 @@ ul.social-box li {
     	height: 400px
 	}
 	#navbarSupportedContent{
-	background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0!important;
+	background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0 !important;
 	padding: 30px 0
 	}
 	#navbarSupportedContent li{

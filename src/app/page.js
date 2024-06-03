@@ -9,41 +9,32 @@ import Script from 'next/script'
 import Image from 'next/image'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import ratiostars from './ratio-stars.svg'
 
 export default function Home() {
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-      const handleLoad = () => {
-        setLoading(false);
-      };
-  
-      window.addEventListener('load', handleLoad);
-  
-      return () => {
-        window.removeEventListener('load', handleLoad);
-      };
-    }, []);
+    const [loading, setLoading] = useState(true);
 
     const handleClick = (event) => {
-        const href = event.target.getAttribute('href');
-        const target = document.querySelector(href);
-    
-        if (target) {
-          event.preventDefault();
-          window.scrollTo({
-            top: target.offsetTop,
-            behavior: 'smooth'
-          });
-        }
-      };
+      // const href = event.target.getAttribute('href');
+      // const target = document.querySelector(href);
+      // if (target) {
+      //   console.log(target.offsetTop)
+      //   //event.preventDefault();
+      //   window.scrollTo({
+      //     top: target.offsetTop,
+      //     behavior: 'smooth'
+      //   });
+      // }
+    };
+
+    useEffect(() => {
+      setLoading(false);
+    }, []);
 
     return (
     <>
     <Script src="https://code.jquery.com/jquery-3.2.1.min.js"></Script>
     <Script src="/js/bootstrap.min.js"></Script>
-    <Script async defer src="https://maps.google.com/maps/api/js?key=AIzaSyB52BfJHBtqiqYBn_D4ZUqujiWxAOiRyTc&callback=initMap"></Script>
+    <Script async defer src="https://maps.google.com/maps/api/js?key=AIzaSyB52BfJHBtqiqYBn_D4ZUqujiWxAOiRyTc&callback=''"></Script>
     <Script src="/js/gmap-custom.js"></Script>
     <Script src="/js/core.js"></Script>
     <Script type="text/javascript" src="components/bootstrap/dist/js/bootstrap.js"></Script>
@@ -55,11 +46,8 @@ export default function Home() {
         <div />
         <div />
       </div>
-    </div> : <><nav className="navbar navbar-expand-md fixed-top top-nav">
+    </div> : <><nav className="navbar navbar-expand-md fixed-top top-nav light-header">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
-          <Image src="/img/logo.png" alt='barber shop logo' width='100' height='100' style={{ marginTop: '1.5rem', maxWidth: '100%' }}/>
-        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -73,36 +61,39 @@ export default function Home() {
             <Image alt='barber shop menu' src="/img/icons/menu.png" width='100' height='100'/>
           </span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="navbar-collapse" id="navbarSupportedContent">        
           <ul className="navbar-nav m-auto text-sm-center text-md-center">
-            <li className="nav-item">
-              <a className="nav-link" href="#home" onClick={handleClick}>
-                Home <span className="sr-only">(current)</span>
+            <li className="nav-item margin-right">
+              <a className="nav-link" href="#home" onClick={(e) => handleClick(e)}>
+                Home
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item margin-right">
               <a className="nav-link" href="#services" onClick={handleClick}>
-                Services
+                Usługi
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item margin-right">
               <a className="nav-link" href="#about" onClick={handleClick}>
-                About
+                Ceny
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#price" onClick={handleClick}>
-                Prices
+              <a className="navbar-brand" href="/">
+                <Image src="/img/logo.png" alt='barber shop logo' width='110' height='110' style={{  maxWidth: '100%' }}/>
+              </a>
+            <li className="nav-item margin-left">
+              <a className="nav-link" href="#galery" onClick={handleClick}>
+                Galeria
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item margin-left">
               <a className="nav-link" href="#testimonial" onClick={handleClick}>
-                Testimonials
+                Opinie
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#contact" onClick={handleClick}>
-                Contact
+            <li className="nav-item margin-left">
+              <a className="nav-link" href="#contactinfo" onClick={handleClick}>
+                Kontakt
               </a>
             </li>
           </ul>
@@ -132,7 +123,7 @@ export default function Home() {
         <div className="row">
           <div className="col-md-12">
             <div className="head-box text-center">
-              <h2 className="font-abril ">Nasze <strong>Usługi</strong></h2>
+              <h2 className="font-abril ">Nasze usługi</h2>
             </div>
             <div className="three-panel-block mt-5">
               <div className="row-mdf">
@@ -192,18 +183,18 @@ export default function Home() {
         <div className="row">
           <div className="col-lg-6 col-md-12 copy-container ml-auto">
             <div className="copy-content pr-4">
-              <h2 className="font-abril text-primary">Mamy Najlepsze Ceny</h2>
+              <h2 className="font-abril text-primary">Mamy najlepsze ceny</h2>
               <div className="container">
               <div className="row">
                 <div className="col-md-6">
-                    <li className="list-group-item">Stylizacja. . . . . . . . . . . . . . . . .$25</li>
-                    <li className="list-group-item">Stylizacja + Farbowanie. . . $65</li>
-                    <li className="list-group-item">Stylizacja + Tonowanie. . . .$65</li>
+                    <li className="list-group-item">Stylizacja. . . . . . . . . . . . . . . . .<span className='barber-color'>$25</span></li>
+                    <li className="list-group-item">Stylizacja + Farbowanie. . . <span className='barber-color'>65</span></li>
+                    <li className="list-group-item">Stylizacja + Tonowanie. . . .<span className='barber-color'>$65</span></li>
                 </div>
                 <div className="col-md-6">
-                    <li className="list-group-item">Strzyżenie + Stylizacja + Tonowanie. . . . . . . . . . . . $100</li>
-                    <li className="list-group-item">Strzyżenie. . . . . . . . . . . . $25</li>
-                    <li className="list-group-item">Golenie. . . . . . . .  . . . . . . . .$65</li>
+                    <li className="list-group-item">Strzyżenie + Stylizacja + Tonowanie. . . . . . . . . . . . <span className='barber-color'>$100</span></li>
+                    <li className="list-group-item">Strzyżenie. . . . . . . . . . . . <span className='barber-color'>$25</span></li>
+                    <li className="list-group-item">Golenie. . . . . . . .  . . . . . . . .<span className='barber-color'>$65</span></li>
                 </div>
               </div>
             </div>
@@ -212,15 +203,74 @@ export default function Home() {
         </div>
       </div>
     </section>   
+    <section id="galery" className="info-section sec-bg-05 text-white bg-right bg-dark bg-overlay">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <div className="head-box text-center">
+              <h2 className="font-abril ">Galeria zdjęć</h2>
+            </div>
+            <div className="three-panel-block mt-5">
+              <div className="row-mdf">
+                <div className="col-lg-3 col-md-6 col-sm-6 flex">
+                  <div className="service-block">
+                      <Image alt='barber shop zdjecie wykonanej pracy' src="/img/1.jpeg" width='1000' height='1000' className="img-fluid" />
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-6 col-sm-6 flex">
+                  <div className="service-block">
+                    <Image alt='barber shop zdjecie wykonanej pracy' src="/img/2.jpeg" width='1000' height='1000' className="img-fluid" />
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-6 col-sm-6 flex">
+                  <div className="service-block">
+                    <Image alt='barber shop zdjecie wykonanej pracy' src="/img/3.jpeg" width='1000' height='1000' className="img-fluid" />
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-6 col-sm-6 flex">
+                  <div className="service-block">
+                    <Image alt='barber shop zdjecie wykonanej pracy' src="/img/4.jpeg" width='1000' height='1000' className="img-fluid" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="three-panel-block">
+              <div className="row-mdf">
+                <div className="col-lg-3 col-md-6 col-sm-6 flex">
+                  <div className="service-block mb-5 flex">
+                    <Image alt='barber shop zdjecie wykonanej pracy' src="/img/5.jpeg" width='1000' height='1000' className="img-fluid" />
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-6 col-sm-6 flex">
+                  <div className="service-block mb-5">
+                    <Image alt='barber shop zdjecie wykonanej pracy' src="/img/6.jpeg" width='1000' height='1000' className="img-fluid" />
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-6 col-sm-6 flex">
+                  <div className="service-block mb-5">
+                    <Image alt='barber shop zdjecie wykonanej pracy' src="/img/7.jpeg" width='1000' height='1000' className="img-fluid" />
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-6 col-sm-6 flex">
+                  <div className="service-block mb-5">
+                    <Image alt='barber shop zdjecie wykonanej pracy' src="/img/8.jpeg" width='1000' height='1000' className="img-fluid" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     {/* Testimonial Block 01*/}
     <section
       id="testimonial"
-      className="testimonial-section sec-bg-04 py-5 bg-overlay"
+      className="testimonial-section sec-bg-04 py-5"
     >
       <div className="container">
         <div className="row">
           <div className="head-box text-center mb-3 col-md-12 mt-5">
-            <h2 className="font-abril text-white">Co Mówią O Nas Nasi Klienci</h2>
+            <h2 className="font-abril">Co mówią o nas nasi klienci</h2>
           </div>
         </div>
         <div className="single-testimonial">
@@ -229,7 +279,7 @@ export default function Home() {
             className="carousel slide"
             data-ride="carousel"
           >
-            <div className="carousel-inner pt-5 text-white" role="listbox">
+            <div className="carousel-inner pt-5" role="listbox">
             <Carousel thumbWidth={150} showStatus={false} interval={3000} infiniteLoop={true} autoPlay={true}>
               <div className="carousel-item active">
                 <div className="testimonial-box text-center">
@@ -339,9 +389,35 @@ export default function Home() {
         </div>
       </div>
     </section>
+    <section
+      id="contactinfo"
+      className="testimonial-section sec-bg-05 py-5 bg-overlay"
+    >
+      <div className="row">
+        <div className="head-box text-center mb-3 col-md-12 mt-4">
+          <h2 style={{ marginBottom: '1rem' }} className="font-abril text-white">Informacje kontaktowe</h2>
+        </div>
+      </div>
+      <div className="container" style={{ marginBottom: '1rem' }}>
+      <div className="row" style={{ backgroundColor: '#0f0a05' }}>
+        <div className="col-lg-4 col-md-6 col-sm-12">
+          <h4 className="p-3 text-white text-center" ><strong>Adres:</strong></h4>
+          <div className="p-3 text-white text-center" style={{ fontSize: '18px' }}>Rynek 4 <br/> 63-440 Raszków</div>
+        </div>
+        <div className="col-lg-4 col-md-6 col-sm-12">
+          <h4 className="p-3 text-white text-center"><strong>Numer telefonu:</strong></h4>
+          <div className="p-3 text-white text-center" style={{ fontSize: '18px' }}>+48 668 637 979</div>
+        </div>
+        <div className="col-lg-4 col-md-6 col-sm-12">
+          <h4 className="p-3 text-white text-center"><strong>Adres e-mail:</strong></h4>
+          <div className="p-3 text-white text-center" style={{ fontSize: '18px' }}>salon@barbershop.pl</div>
+        </div>
+      </div>
+    </div>
+    </section>
     {/* Contact Block */}
     <section id="contact" className="contact-section bg-dark">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2471.81895503101!2d17.72612047688902!3d5171805469529222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4705359852922cb1%3A0x82690071c159db22!2sBarber%20shop!5e0!3m2!1spl!2spl!4v1717077444759!5m2!1spl!2spl" width="100%" height="100%" style={{ border: '0' }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2471.81895503101!2d17.72612047688902!3d5171805469529222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4705359852922cb1%3A0x82690071c159db22!2sBarber%20shop!5e0!3m2!1spl!2spl!4v1717077444759!5m2!1spl!2spl" width="100%" height="100%" style={{ border: '0' }} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
       {/* <div className="container py-5">
         <div className="col-lg-8 col-md-6 col-sm-10 form-sec bg-white my-5 p-5 mx-auto">
           <form>
@@ -435,33 +511,6 @@ export default function Home() {
           </form>
         </div>
       </div> */}
-    </section>
-
-    <section
-      id="contactinfo"
-      className="testimonial-section sec-bg-05 py-5 bg-overlay"
-    >
-      <div className="row">
-        <div className="head-box text-center mb-3 col-md-12 mt-4">
-          <h2 style={{ marginBottom: '1rem' }} className="font-abril text-white">Informacje kontaktowe</h2>
-        </div>
-      </div>
-      <div className="container" style={{ marginBottom: '1rem' }}>
-      <div className="row" style={{ backgroundColor: 'black' }}>
-        <div className="col-lg-4 col-md-6 col-sm-12">
-          <h4 className="p-3 text-white text-center" ><strong>Adres:</strong></h4>
-          <div className="p-3 text-white text-center" style={{ fontSize: '18px' }}>Rynek 4 <br/> 63-440 Raszków</div>
-        </div>
-        <div className="col-lg-4 col-md-6 col-sm-12">
-          <h4 className="p-3 text-white text-center"><strong>Numer telefonu:</strong></h4>
-          <div className="p-3 text-white text-center" style={{ fontSize: '18px' }}>+48 668 637 979</div>
-        </div>
-        <div className="col-lg-4 col-md-6 col-sm-12">
-          <h4 className="p-3 text-white text-center"><strong>Adres e-mail:</strong></h4>
-          <div className="p-3 text-white text-center" style={{ fontSize: '18px' }}>salon@barbershop.pl</div>
-        </div>
-      </div>
-    </div>
     </section>
     {/* footer Block */}
     <div className="copy-footer bg-primary py-2">
