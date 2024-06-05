@@ -1,14 +1,20 @@
 "use client"; // This is a client component 👈🏽
 
-import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css';
+import 'lightgallery/css/lg-thumbnail.css';
+import 'lightgallery/css/lg-zoom.css';
+import 'lightgallery/css/lightgallery.css';
+import lgThumbnail from 'lightgallery/plugins/thumbnail';
+import lgZoom from 'lightgallery/plugins/zoom';
+import LightGallery from 'lightgallery/react';
+import Image from 'next/image';
+import Script from 'next/script';
+import { useEffect, useState } from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import '../../public/css/custom-style.css';
 import '../../public/css/loaders.css';
-import 'font-awesome/css/font-awesome.min.css';
-import Script from 'next/script'
-import Image from 'next/image'
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
 
 export default function Home() {
     const [loading, setLoading] = useState(true);
@@ -30,6 +36,10 @@ export default function Home() {
       setLoading(false);
     }, []);
 
+    const onInit = () => {
+      console.log('lightGallery has been initialized');
+    };
+
     return (
     <>
     <Script src="https://code.jquery.com/jquery-3.2.1.min.js"></Script>
@@ -46,7 +56,8 @@ export default function Home() {
         <div />
         <div />
       </div>
-    </div> : <><nav className="navbar navbar-expand-md fixed-top top-nav light-header">
+    </div> : <>
+    <nav className="navbar navbar-expand-md top-nav fixed-top light-header">
       <div className="container-fluid">
         <button
           className="navbar-toggler"
@@ -100,11 +111,23 @@ export default function Home() {
         </div>
       </div>
     </nav>
-    <section id="home" className="intro intro-bg parallax">
-      <div className="container">
+    <section id="home" className="intro">
+      <div className='home-container'>
+        <div className='first-banner-part'>
+          <div className='first-part-position'>
+            <h1>BARBER SHOP RASZKÓW</h1>
+            <p>budujemy atmosferę, w której każdy zapracowany mężczyzna poczuje azyl</p>
+          </div>
+          <div className='second-part-position'>
+            <Image alt='barber shop logo' src="/img/logo.png" width='250' height='100'/>
+          </div>
+        </div>
+        <div className='second-banner-part'></div>
+      </div>
+      {/* <div className="container">
         <div className="row">
           <div className="text-center pt-5">
-            <div className="intro-caption mt-5">
+            <div className="intro-caption mt-5"> */}
               {/* <h1 className="text-white mb-2">
                 Barber Shop Raszków
               </h1>
@@ -112,10 +135,10 @@ export default function Home() {
                 {" "}
                 Serdecznie zapraszamy do odwiedzenia naszego Barber Shopu w Raszkowie. Jesteśmy gotowi, aby zadbać o Twój wygląd. Zapraszamy do umawiania się na wizyty z wyprzedzeniem!
               </p> */}
-            </div>
+            {/* </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
     {/* Info block 1 */}
     <section id="services" className="info-section text-white bg-right bg-dark">
@@ -187,15 +210,20 @@ export default function Home() {
               <div className="container">
               <div className="row">
                 <div className="col-md-6">
-                    <li className="list-group-item">Stylizacja. . . . . . . . . . . . . . . . .<span className='barber-color'>$25</span></li>
-                    <li className="list-group-item">Stylizacja + Farbowanie. . . <span className='barber-color'>65</span></li>
-                    <li className="list-group-item">Stylizacja + Tonowanie. . . .<span className='barber-color'>$65</span></li>
+                    <li className="list-group-item">Strzyżenie włosów. . . . . . . . . . .<span className='barber-color'>50 zł</span></li>
+                    <li className="list-group-item">Combo 1 włosy + trymowanie brody. . . . . . . . . . . . . . . . . . . . . . . . . . .<span className='barber-color'>75 zł</span></li>
+                    <li className="list-group-item">Strzyżenie dzieci do lat 12. . . <span className='barber-color'>38 zł</span></li>
+                    <li className="list-group-item">Strzyżenie włosów długich. <span className='barber-color'>70 zł</span></li>
+                    <li className="list-group-item">Strzyżenie brody. . . . . . . . . . . . . .<span className='barber-color'>45 zł</span></li>
+                    <li className="list-group-item">Combo 1 + trymowanie brody brzytwą. . . . . . . . . . . . . . . . . . . . . . . <span className='barber-color'>85 zł</span></li>
                 </div>
                 <div className="col-md-6">
-                    <li className="list-group-item">Strzyżenie + Stylizacja + Tonowanie. . . . . . . . . . . . <span className='barber-color'>$100</span></li>
-                    <li className="list-group-item">Strzyżenie. . . . . . . . . . . . <span className='barber-color'>$25</span></li>
-                    <li className="list-group-item">Golenie. . . . . . . .  . . . . . . . .<span className='barber-color'>$65</span></li>
-                </div>
+                    <li className="list-group-item">Golenie głowy brzytwą. . . . . . .<span className='barber-color'>50 zł</span></li>
+                    <li className="list-group-item">Woskowanie uszy. . . . . . . . . . . . . . .<span className='barber-color'>15 zł</span></li>
+                    <li className="list-group-item">Woskowanie nos. . . . . . . . . . . . . . . .<span className='barber-color'>15 zł</span></li>                
+                    <li className="list-group-item">Woskowanie brwi. . . . . . . . . . . . . . .<span className='barber-color'>15 zł</span></li>
+                    <li className="list-group-item">Stylizacja włosów. . . . . . . . . . . . <span className='barber-color'>25 zł</span></li>
+                    </div>
               </div>
             </div>
             </div>
@@ -210,57 +238,26 @@ export default function Home() {
             <div className="head-box text-center">
               <h2 className="font-abril ">Galeria zdjęć</h2>
             </div>
-            <div className="three-panel-block mt-5">
-              <div className="row-mdf">
-                <div className="col-lg-3 col-md-6 col-sm-6 flex">
-                  <div className="service-block">
-                      <Image alt='barber shop zdjecie wykonanej pracy' src="/img/1.jpeg" width='1000' height='1000' className="img-fluid" />
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-6 col-sm-6 flex">
-                  <div className="service-block">
-                    <Image alt='barber shop zdjecie wykonanej pracy' src="/img/2.jpeg" width='1000' height='1000' className="img-fluid" />
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-6 col-sm-6 flex">
-                  <div className="service-block">
-                    <Image alt='barber shop zdjecie wykonanej pracy' src="/img/3.jpeg" width='1000' height='1000' className="img-fluid" />
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-6 col-sm-6 flex">
-                  <div className="service-block">
-                    <Image alt='barber shop zdjecie wykonanej pracy' src="/img/4.jpeg" width='1000' height='1000' className="img-fluid" />
-                  </div>
-                </div>
-              </div>
+            <div className='grid'>
+              <LightGallery getCaptionFromTitleOrAlt={false} download={false} elementClassNames='grid-container' onInit={onInit} speed={500} plugins={[lgThumbnail, lgZoom]}>
+                {['/img/1.jpeg', '/img/2.jpeg', '/img/3.jpeg', '/img/4.jpeg', '/img/5.jpeg', '/img/6.jpeg', '/img/7.jpeg', '/img/8.jpeg'].map((src, index) => (
+                  <a href={src} key={index} className="grid-item">
+                    <div className="service-block">
+                      <Image
+                        alt={`barber shop zdjecie wykonanej pracy ${index + 1}`}
+                        src={src}
+                        width={1000}
+                        height={1000}
+                        className="img-fluid"
+                      />
+                    </div>
+                  </a>
+                ))}
+              </LightGallery>
             </div>
-            <div className="three-panel-block">
-              <div className="row-mdf">
-                <div className="col-lg-3 col-md-6 col-sm-6 flex">
-                  <div className="service-block mb-5 flex">
-                    <Image alt='barber shop zdjecie wykonanej pracy' src="/img/5.jpeg" width='1000' height='1000' className="img-fluid" />
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-6 col-sm-6 flex">
-                  <div className="service-block mb-5">
-                    <Image alt='barber shop zdjecie wykonanej pracy' src="/img/6.jpeg" width='1000' height='1000' className="img-fluid" />
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-6 col-sm-6 flex">
-                  <div className="service-block mb-5">
-                    <Image alt='barber shop zdjecie wykonanej pracy' src="/img/7.jpeg" width='1000' height='1000' className="img-fluid" />
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-6 col-sm-6 flex">
-                  <div className="service-block mb-5">
-                    <Image alt='barber shop zdjecie wykonanej pracy' src="/img/8.jpeg" width='1000' height='1000' className="img-fluid" />
-                  </div>
-                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
     </section>
     {/* Testimonial Block 01*/}
     <section
@@ -409,8 +406,8 @@ export default function Home() {
           <div className="p-3 text-white text-center" style={{ fontSize: '18px' }}>+48 668 637 979</div>
         </div>
         <div className="col-lg-4 col-md-6 col-sm-12">
-          <h4 className="p-3 text-white text-center"><strong>Adres e-mail:</strong></h4>
-          <div className="p-3 text-white text-center" style={{ fontSize: '18px' }}>salon@barbershop.pl</div>
+          <h4 className="p-3 text-white text-center"><strong>Facebook:</strong></h4>
+          <div className="p-3 text-white text-center" style={{ fontSize: '18px' }}><a className='a-fb' target='_blank' href='https://www.facebook.com/profile.php?id=100095056908881'>Barber Shop Raszków</a></div>
         </div>
       </div>
     </div>

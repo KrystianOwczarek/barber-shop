@@ -13,11 +13,10 @@ body{
 	font-size: 1rem;
 	font-family: 'Source Sans Pro', sans-serif;
 }
-
 /* ========== Universal Stylings ========== */
 h1,h2,h3,h4,h5{
 	position: relative;
-	font-family: 'Abril Fatface', cursive;
+	font-family: 'Abril Fatface';
 	font-weight: 700;
 }
 h6{
@@ -193,6 +192,35 @@ i.box-circle-solid{
 .parallax{
 	background-attachment: fixed!important;
 }
+/* Kontener dla obrazków */
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr); /* 4 kolumny o równej szerokości */
+	gap: 5px; /* Odstęp między obrazkami */
+	margin: 10px;
+  }
+  
+  .grid-item {
+	width: 100%;
+	height: auto;
+  }
+  
+  .service-block {
+	overflow: hidden; /* Aby zapobiec wyciekaniu zawartości */
+  }
+  
+  img.img-fluid {
+	width: 100%; /* Ustawienie szerokości obrazka na 100% kontenera */
+	height: auto; /* Automatyczna wysokość dla proporcjonalnego skalowania */
+	object-fit: cover; /* Wypełnianie kontenera bez zniekształceń */
+  }
+.a-fb{
+	text-decoration: none;
+	color: #fff;
+}
+.a-fb:hover{
+	color: #93362e;
+}
 /* ========== Page Loading Style ========== */
 .loaders {
     width: 100%;
@@ -255,6 +283,9 @@ i.box-circle-solid{
 	align-items: center;
 	justify-content: center;
 }
+.navbar{
+	background-color: #0f0a05;
+}
 .navbar-brand{
 	margin-right: 1rem;
 	margin-left: 1rem;
@@ -289,6 +320,7 @@ i.box-circle-solid{
 }
 #about{
 	scroll-margin-top: 120px; /* zmień na wysokość Twojej nawigacji */
+	background-color: #f8f2ef;
 }
 #testimonial{
 	scroll-margin-top: 120px; /* zmień na wysokość Twojej nawigacji */
@@ -301,14 +333,65 @@ i.box-circle-solid{
 	scroll-margin-top: 120px; /* zmień na wysokość Twojej nawigacji */
 	border-bottom: 20px solid #93362e;
 }
+#lg-prev-14{
+	color: #93362e;
+}
+.home-container{
+	display: flex;
+	flex-flow: row nowrap;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 88%;
+	border-bottom: 20px solid #93362e;
+}
+.first-banner-part{
+	width: 35%;
+	display: flex;
+	flex-flow: column nowrap;
+	height: 100%;
+	background:url("../img/first-banner-part.png");
+	background-size: cover;
+}
+.first-part-position{
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 40%;
+	border-bottom: 10px solid white;
+}
+.first-part-position h1{
+	font-size: 34px !important;
+	color: #fff;
+	text-align: center;
+}
+.first-part-position p{
+	color: #93362e;
+	text-align: center;
+}
+.second-part-position{
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	padding-bottom: 4rem;
+	width: 100%;
+	height: 60%;
+}
+.second-banner-part{
+	width: 65%;
+	height: 100%;
+	background-color: white;
+}
 .top-nav.light-header{
-	height: 120px;
-	background: rgba(0,0,0,0.6);
+	height: 140px;
+	background: #0f0a05 !important;
 	box-shadow: 0 0 10px rgba(0,0,0,0.23);
 	transition: 0.5s ease-in;
 	-webkit-transition: 0.5s ease-in;
 	-moz-transition: 0.5s ease-in;
-	z-index: 9999;
+	z-index: 1000;
 }
 #contactinfo:before {
 	background: #0f0a05!important;
@@ -331,7 +414,7 @@ i.box-circle-solid{
 	width:100%;
 	display: flex;
 	align-items:center;
-	height:100%;
+	height:95%;
 	position: relative;
 	z-index: 1;
 }
@@ -354,7 +437,7 @@ i.box-circle-solid{
 }
 .intro h1{
 	font-weight: 700;
-	font-family: 'Abril Fatface', cursive;
+	font-family: 'Abril Fatface',;
 	font-size: 3.8rem;
 }
 .intro-caption .btn i{

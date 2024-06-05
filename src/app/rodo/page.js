@@ -185,8 +185,8 @@ export default function Home() {
           <div className="p-3 text-white text-center" style={{ fontSize: '18px' }}>+48 668 637 979</div>
         </div>
         <div className="col-lg-4 col-md-6 col-sm-12">
-          <h4 className="p-3 text-white text-center"><strong>Adres e-mail:</strong></h4>
-          <div className="p-3 text-white text-center" style={{ fontSize: '18px' }}>salon@barbershop.pl</div>
+          <h4 className="p-3 text-white text-center"><strong>Facebook:</strong></h4>
+          <div className="p-3 text-white text-center" style={{ fontSize: '18px' }}><a className='a-fb' target='_blank' href='https://www.facebook.com/profile.php?id=100095056908881'>Barber Shop Raszków</a></div>
         </div>
       </div>
     </div>
