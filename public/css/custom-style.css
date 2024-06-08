@@ -1153,11 +1153,11 @@ ul.social-box li {
 
 	#navbarSupportedContent li{
 		width: 100%;
-		position: relative;
-		z-index: 500;
 	}
 	.top-nav .navbar-nav li .nav-link{
 		width: 100%;
+		position: relative;
+		z-index: 500;
 	}
 }
 
