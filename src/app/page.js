@@ -40,6 +40,18 @@ export default function Home() {
       console.log('lightGallery has been initialized');
     };
 
+    const handleOpen = () => {
+      const nav = document.querySelector('.navbar-collapse');
+      const displayValue = nav.style.display;
+      console.log(nav)
+      console.log(displayValue)
+      if(displayValue === '' || displayValue === 'none'){
+        nav.style.display = 'flex';
+      }else{
+        nav.style.display = 'none';
+      }
+    }
+
     return (
     <>
     <Script src="https://code.jquery.com/jquery-3.2.1.min.js"></Script>
@@ -58,6 +70,9 @@ export default function Home() {
       </div>
     </div> : <>
     <nav className="navbar navbar-expand-md top-nav fixed-top light-header">
+      <a className="navbar-brand-mobile" href="/">
+        <Image src="/img/logo.png" alt='barber shop logo' width='110' height='110' style={{  maxWidth: '100%' }}/>
+      </a>
       <div className="container-fluid">
         <button
           className="navbar-toggler"
@@ -67,6 +82,7 @@ export default function Home() {
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          onClick={handleOpen}
         >
           <span className="navbar-toggler-icon">
             <Image alt='barber shop menu' src="/img/icons/menu.png" width='100' height='100'/>
@@ -116,7 +132,7 @@ export default function Home() {
         <div className='first-banner-part'>
           <div className='first-part-position'>
             <h1>BARBER SHOP RASZKÓW</h1>
-            <p>budujemy atmosferę, w której każdy zapracowany mężczyzna poczuje azyl</p>
+            <p>profesjonalne podejście i lata doświadczenia</p>
           </div>
           <div className='second-part-position'>
             <Image alt='barber shop logo' src="/img/logo.png" width='250' height='100'/>
@@ -203,12 +219,16 @@ export default function Home() {
     {/* Content block 1 */}
     <section id="about" className="copy-content-sec sec-bg-02 h-100">
       <div className="container">
-        <div className="row">
+        <div className="row display-flex">
+          <div className="col-lg-6 col-md-12 copy-container ml-auto margin-right-img">
+            <Image src="/img/price-image2.jpeg" alt='barber shop zdjecie robionej brody' id='price-image' width='325' height='110' style={{  maxWidth: '100%' }}/>
+            <Image src="/img/price-image.jpeg" alt='barber shop zdjecie robionej brody' id='price-image2' width='325' height='110' style={{  maxWidth: '100%' }}/>
+          </div>
           <div className="col-lg-6 col-md-12 copy-container ml-auto">
             <div className="copy-content pr-4">
               <h2 className="font-abril text-primary">Mamy najlepsze ceny</h2>
               <div className="container">
-              <div className="row">
+              <div className="row" id='computer'>
                 <div className="col-md-6">
                     <li className="list-group-item">Strzyżenie włosów. . . . . . . . . . .<span className='barber-color'>50 zł</span></li>
                     <li className="list-group-item">Combo 1 włosy + trymowanie brody. . . . . . . . . . . . . . . . . . . . . . . . . . .<span className='barber-color'>75 zł</span></li>
@@ -224,6 +244,40 @@ export default function Home() {
                     <li className="list-group-item">Woskowanie brwi. . . . . . . . . . . . . . .<span className='barber-color'>15 zł</span></li>
                     <li className="list-group-item">Stylizacja włosów. . . . . . . . . . . . <span className='barber-color'>25 zł</span></li>
                     </div>
+              </div>
+              <div className="row" id='mobile-tablet'>
+                <div className="col-md-6">
+                    <li className="list-group-item">Strzyżenie włosów. . . . . . . . . . . . . . . . . . . . . . <span className='barber-color'>50 zł</span></li>
+                    <li className="list-group-item">Combo 1 włosy + trymowanie brody. . . .<span className='barber-color'>75 zł</span></li>
+                    <li className="list-group-item">Strzyżenie dzieci do lat 12. . . . . . . . . . . . . . .<span className='barber-color'>38 zł</span></li>
+                    <li className="list-group-item">Strzyżenie włosów długich. . . . . . . . . . . . <span className='barber-color'>70 zł</span></li>
+                    <li className="list-group-item">Strzyżenie brody. . . . . . . . . . . . . . . . . . . . . . . . .<span className='barber-color'>45 zł</span></li>
+                    <li className="list-group-item">Combo 1 + trymowanie brody brzytwą.<span className='barber-color'>85 zł</span></li>
+                </div>
+                <div className="col-md-6">
+                    <li className="list-group-item">Golenie głowy brzytwą. . . . . . . . . . . . .<span className='barber-color'>50 zł</span></li>
+                    <li className="list-group-item">Woskowanie uszy. . . . . . . . . . . . . . . . .  . . . .<span className='barber-color'>15 zł</span></li>
+                    <li className="list-group-item">Woskowanie nos. . . . . . . . . . . . . . . . .  . . . . .<span className='barber-color'>15 zł</span></li>                
+                    <li className="list-group-item">Woskowanie brwi. . . . . . . . . . . . . . . . .  . . . . <span className='barber-color'>15 zł</span></li>
+                    <li className="list-group-item">Stylizacja włosów. . . . . . . . . . . . . . . . . . <span className='barber-color'>25 zł</span></li>
+                </div>
+              </div>
+              <div className="row" id='mobile-phone'>
+                <div className="col-md-6">
+                    <li className="list-group-item">Strzyżenie włosów. . . . . . . . . . . . . . . . . . . .<span className='barber-color'>50 zł</span></li>
+                    <li className="list-group-item">Combo 1 włosy+trymowanie brody. . <span className='barber-color'>75 zł</span></li>
+                    <li className="list-group-item">Strzyżenie dzieci do lat 12. . . . . . . . . . . . <span className='barber-color'>38 zł</span></li>
+                    <li className="list-group-item">Strzyżenie włosów długich. . . . . . . . . .<span className='barber-color'>70 zł</span></li>
+                    <li className="list-group-item">Strzyżenie brody. . . . . . . . . . . . . . . . . . . . . . <span className='barber-color'>45 zł</span></li>
+                    <li className="list-group-item">Combo 1+trymowanie brody brzytwą. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .<span className='barber-color'>85zł</span></li>
+                </div>
+                <div className="col-md-6">
+                    <li className="list-group-item">Golenie głowy brzytwą. . . . . . . . . . . . . . <span className='barber-color'>50 zł</span></li>
+                    <li className="list-group-item">Woskowanie uszy. . . . . . . . . . . . . . . . .  . . . . . <span className='barber-color'>15 zł</span></li>
+                    <li className="list-group-item">Woskowanie nos. . . . . . . . . . . . . . . . .  . . . . . . <span className='barber-color'>15 zł</span></li>                
+                    <li className="list-group-item">Woskowanie brwi. . . . . . . . . . . . . . . . .  . . . . . <span className='barber-color'>15 zł</span></li>
+                    <li className="list-group-item">Stylizacja włosów. . . . . . . . . . . . . . . . . . . .<span className='barber-color'>25 zł</span></li>
+                </div>
               </div>
             </div>
             </div>

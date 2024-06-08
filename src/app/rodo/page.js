@@ -42,11 +42,9 @@ export default function Home() {
     <>
     <Script src="https://code.jquery.com/jquery-3.2.1.min.js"></Script>
     <Script src="/js/bootstrap.min.js"></Script>
-    <Script async defer src="https://maps.google.com/maps/api/js?key=AIzaSyB52BfJHBtqiqYBn_D4ZUqujiWxAOiRyTc&callback=initMap"></Script>
     <Script src="/js/gmap-custom.js"></Script>
     <Script src="/js/core.js"></Script>
     <Script type="text/javascript" src="components/bootstrap/dist/js/bootstrap.js"></Script>
-    <Script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOJRSYGh1l3d6qGc-5OYOExRboJnJFFss&callback=console.debug&libraries=maps,marker&v=beta"></Script>
     {(loading ?
     <div className="loader loader-bg">
       <div className="loader-inner ball-pulse">
@@ -167,6 +165,7 @@ export default function Home() {
     {/* Contact Block */}
     <section
       id="contactinfo"
+      style={{ borderBottom: '0px' }}
       className="testimonial-section sec-bg-05 py-5 bg-overlay"
     >
       <div className="row">
