@@ -1090,7 +1090,7 @@ ul.social-box li {
 	}
 
 	section.copy-content-sec{
-		height: 730px !important;
+		height: 800px !important;
 		padding-top: 0px;
 	}
 	.copy-content-sec h2{
@@ -1153,6 +1153,8 @@ ul.social-box li {
 
 	#navbarSupportedContent li{
 		width: 100%;
+		position: relative;
+		z-index: 500;
 	}
 	.top-nav .navbar-nav li .nav-link{
 		width: 100%;
