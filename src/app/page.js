@@ -43,13 +43,15 @@ export default function Home() {
     const handleOpen = () => {
       const nav = document.querySelector('.navbar-collapse');
       const displayValue = nav.style.display;
-      console.log(nav)
-      console.log(displayValue)
       if(displayValue === '' || displayValue === 'none'){
         nav.style.display = 'flex';
       }else{
         nav.style.display = 'none';
       }
+    }
+
+    const handleTouch = (e) => {
+      window.href = e.target.href
     }
 
     return (
@@ -91,17 +93,17 @@ export default function Home() {
         <div className="navbar-collapse" id="navbarSupportedContent">        
           <ul className="navbar-nav m-auto text-sm-center text-md-center">
             <li className="nav-item margin-right">
-              <a className="nav-link" href="#home" onClick={(e) => handleClick(e)}>
+              <a className="nav-link" href="#home" onTouchStart={handleTouch}>
                 Home
               </a>
             </li>
             <li className="nav-item margin-right">
-              <a className="nav-link" href="#services" onClick={handleClick}>
+              <a className="nav-link" href="#services" onTouchStart={handleTouch}>
                 Usługi
               </a>
             </li>
             <li className="nav-item margin-right">
-              <a className="nav-link" href="#about" onClick={handleClick}>
+              <a className="nav-link" href="#about" onTouchStart={handleTouch}>
                 Ceny
               </a>
             </li>
@@ -109,17 +111,17 @@ export default function Home() {
                 <Image src="/img/logo.png" alt='barber shop logo' width='110' height='110' style={{  maxWidth: '100%' }}/>
               </a>
             <li className="nav-item margin-left">
-              <a className="nav-link" href="#galery" onClick={handleClick}>
+              <a className="nav-link" href="#galery" onTouchStart={handleTouch}>
                 Galeria
               </a>
             </li>
             <li className="nav-item margin-left">
-              <a className="nav-link" href="#testimonial" onClick={handleClick}>
+              <a className="nav-link" href="#testimonial" onTouchStart={handleTouch}>
                 Opinie
               </a>
             </li>
             <li className="nav-item margin-left">
-              <a className="nav-link" href="#contactinfo" onClick={handleClick}>
+              <a className="nav-link" href="#contactinfo" onTouchStart={handleTouch}>
                 Kontakt
               </a>
             </li>
