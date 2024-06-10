@@ -15,22 +15,11 @@ import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import '../../public/css/custom-style.css';
 import '../../public/css/loaders.css';
+import { Fade } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
 
 export default function Home() {
     const [loading, setLoading] = useState(true);
-
-    const handleClick = (event) => {
-      // const href = event.target.getAttribute('href');
-      // const target = document.querySelector(href);
-      // if (target) {
-      //   console.log(target.offsetTop)
-      //   //event.preventDefault();
-      //   window.scrollTo({
-      //     top: target.offsetTop,
-      //     behavior: 'smooth'
-      //   });
-      // }
-    };
 
     useEffect(() => {
       setLoading(false);
@@ -44,15 +33,38 @@ export default function Home() {
       const nav = document.querySelector('.navbar-collapse');
       const displayValue = nav.style.display;
       if(displayValue === '' || displayValue === 'none'){
-        nav.style.display = 'flex';
+        nav.setAttribute('style', 'display:flex !important');
       }else{
-        nav.style.display = 'none';
+        nav.setAttribute('style', 'display:none !important');
       }
     }
 
     const handleTouch = (e) => {
       window.href = e.target.href
     }
+
+    const spanStyle = {
+      padding: '20px',
+      background: '#efefef',
+      color: '#000000'
+    }
+    
+    const divStyle = {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundSize: 'cover',
+      width: '100%',
+      height: '1000px'
+    }
+    const slideImages = [
+      {
+        url: '/img/baner.jpeg',
+      },
+      {
+        url: '/img/baner2.jpeg',
+      },
+    ];
 
     return (
     <>
@@ -140,7 +152,16 @@ export default function Home() {
             <Image alt='barber shop logo' src="/img/logo.png" width='250' height='100'/>
           </div>
         </div>
-        <div className='second-banner-part'></div>
+        <div className='second-banner-part'>
+          {/* <Image alt='barber shop logo' src="/img/baner.jpeg" width='2000' height='100'/> */}
+          <Fade arrows={false} duration={3000} autoplay={true} infinite={true} canSwipe={false}>
+            {slideImages.map((slideImage, index)=> (
+              <div key={index}>~
+                <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}></div>
+              </div>
+            ))} 
+          </Fade>
+        </div>
       </div>
       {/* <div className="container">
         <div className="row">
