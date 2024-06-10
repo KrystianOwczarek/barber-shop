@@ -168,20 +168,14 @@ i.box-circle-solid{
 	background-position: top left;	
 	background-size: cover;
 }
-.sec-bg-03{
-	background:url("../img/sec-bg-03.jpg");
-	background-repeat: no-repeat;
-	background-position: top left;	
-	background-size: cover;
-}
 .sec-bg-04{
-	background:url("../img/sec-bg-04.jpg");
+	background:url("../img/sec-bg-04.webp");
 	background-repeat: no-repeat;
 	background-position: top left;
 	background-size: cover;
 }
 .sec-bg-05{
-	background:url("../img/901.jpg");
+	background:url("../img/901.webp");
 	background-repeat: repeat;
 	background-position: top center;	
 	background-size: contain;
@@ -355,7 +349,7 @@ i.box-circle-solid{
 	display: flex;
 	flex-flow: column nowrap;
 	height: 100%;
-	background:url("../img/first-banner-part.png");
+	background:url("../img/first-banner-part.webp");
 	background-size: cover;
 }
 .first-part-position{
@@ -435,12 +429,7 @@ i.box-circle-solid{
 .intro.intro-small{
 	height: 60%;
 }
-.intro-bg{
-	background:url("../img/banner.png");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-}
+
 .caption-container{
 	width:50rem;
 	margin:0 auto;

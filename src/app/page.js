@@ -9,7 +9,6 @@ import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
 import LightGallery from 'lightgallery/react';
 import Image from 'next/image';
-import Script from 'next/script';
 import { useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -59,22 +58,15 @@ export default function Home() {
     }
     const slideImages = [
       {
-        url: '/img/baner.jpeg',
+        url: '/img/baner.webp',
       },
       {
-        url: '/img/baner2.jpeg',
+        url: '/img/baner2.webp',
       },
     ];
 
     return (
     <>
-    <Script src="https://code.jquery.com/jquery-3.2.1.min.js"></Script>
-    <Script src="/js/bootstrap.min.js"></Script>
-    <Script async defer src="https://maps.google.com/maps/api/js?key=AIzaSyB52BfJHBtqiqYBn_D4ZUqujiWxAOiRyTc&callback=''"></Script>
-    <Script src="/js/gmap-custom.js"></Script>
-    <Script src="/js/core.js"></Script>
-    <Script type="text/javascript" src="components/bootstrap/dist/js/bootstrap.js"></Script>
-    <Script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOJRSYGh1l3d6qGc-5OYOExRboJnJFFss&callback=console.debug&libraries=maps,marker&v=beta"></Script>
     {(loading ?
     <div className="loader loader-bg">
       <div className="loader-inner ball-pulse">
@@ -85,7 +77,7 @@ export default function Home() {
     </div> : <>
     <nav className="navbar navbar-expand-md top-nav fixed-top light-header">
       <a className="navbar-brand-mobile" href="/">
-        <Image src="/img/logo.png" alt='barber shop logo' width='110' height='110' style={{  maxWidth: '100%' }}/>
+        <Image src="/img/logo.webp" alt='barber shop logo' width='110' height='110' style={{  maxWidth: '100%' }}/>
       </a>
       <div className="container-fluid">
         <button
@@ -99,7 +91,7 @@ export default function Home() {
           onClick={handleOpen}
         >
           <span className="navbar-toggler-icon">
-            <Image alt='barber shop menu' src="/img/icons/menu.png" width='100' height='100'/>
+            <Image alt='barber shop menu' src="/img/icons/menu.webp" width='100' height='100'/>
           </span>
         </button>
         <div className="navbar-collapse" id="navbarSupportedContent">        
@@ -120,7 +112,7 @@ export default function Home() {
               </a>
             </li>
               <a className="navbar-brand" href="/">
-                <Image src="/img/logo.png" alt='barber shop logo' width='110' height='110' style={{  maxWidth: '100%' }}/>
+                <Image src="/img/logo.webp" alt='barber shop logo' width='110' height='110' style={{  maxWidth: '100%' }}/>
               </a>
             <li className="nav-item margin-left">
               <a className="nav-link" href="#galery" onTouchStart={handleTouch}>
@@ -149,11 +141,11 @@ export default function Home() {
             <p>profesjonalne podejście i lata doświadczenia</p>
           </div>
           <div className='second-part-position'>
-            <Image alt='barber shop logo' src="/img/logo.png" width='250' height='100'/>
+            <Image alt='barber shop logo' src="/img/logo.webp" width='250' height='100'/>
           </div>
         </div>
         <div className='second-banner-part'>
-          {/* <Image alt='barber shop logo' src="/img/baner.jpeg" width='2000' height='100'/> */}
+          {/* <Image alt='barber shop logo' src="/img/baner.webp" width='2000' height='100'/> */}
           <Fade arrows={false} duration={3000} autoplay={true} infinite={true} canSwipe={false}>
             {slideImages.map((slideImage, index)=> (
               <div key={index}>~
@@ -192,7 +184,7 @@ export default function Home() {
                 <div className="col-lg-3 col-md-6 col-sm-6">
                   <div className="service-block mb-5">
                     <i className="icon-box mb-3 float-left w-100">
-                      <Image alt='barber shop norzyczki' src="/img/icons/scissors.png" width='100' height='100' className="img-fluid" />
+                      <Image alt='barber shop norzyczki' src="/img/icons/scissors.webp" width='100' height='100' className="img-fluid" />
                     </i>
                     <h3 style={{ marginTop: '1rem' }} className="text-primary"><strong>Cięcie nożyczkami</strong></h3>
                     <p>
@@ -203,7 +195,7 @@ export default function Home() {
                 <div className="col-lg-3 col-md-6 col-sm-6">
                   <div className="service-block mb-5">
                     <i className="icon-box mb-3 float-left w-100">
-                      <Image alt='barber shop brzytwa' src="/img/icons/razor-1.png" width='100' height='100' className="img-fluid" />
+                      <Image alt='barber shop brzytwa' src="/img/icons/razor-1.webp" width='100' height='100' className="img-fluid" />
                     </i>
                     <h3 style={{ marginTop: '1rem' }} className="text-primary"><strong>Cięcie brzytwą</strong></h3>
                     <p>
@@ -214,7 +206,7 @@ export default function Home() {
                 <div className="col-lg-3 col-md-6 col-sm-6">
                   <div className="service-block mb-5">
                     <i className="icon-box mb-3 float-left w-100">
-                      <Image alt='barber shop szczotka' src="/img/icons/brush.png" width='100' height='100' className="img-fluid" />
+                      <Image alt='barber shop szczotka' src="/img/icons/brush.webp" width='100' height='100' className="img-fluid" />
                     </i>
                     <h3 style={{ marginTop: '1rem' }} className="text-primary"><strong>Golenie głowy</strong></h3>
                     <p>
@@ -225,7 +217,7 @@ export default function Home() {
                 <div className="col-lg-3 col-md-6 col-sm-6">
                   <div className="service-block">
                     <i className="icon-box mb-3 float-left w-100">
-                      <Image alt='barber shop spinka do włosów' width='100' height='100' src="/img/icons/hair-clip.png" className="img-fluid" />
+                      <Image alt='barber shop spinka do włosów' width='100' height='100' src="/img/icons/hair-clip.webp" className="img-fluid" />
                     </i>
                     <h3 style={{ marginTop: '1rem' }} className="text-primary"><strong>Cięcie maszynką</strong></h3>
                     <p>
@@ -244,8 +236,8 @@ export default function Home() {
       <div className="container">
         <div className="row display-flex">
           <div className="col-lg-6 col-md-12 copy-container ml-auto margin-right-img">
-            <Image src="/img/price-image2.jpeg" alt='barber shop zdjecie robionej brody' id='price-image' width='325' height='110' style={{  maxWidth: '100%' }}/>
-            <Image src="/img/price-image.jpeg" alt='barber shop zdjecie robionej brody' id='price-image2' width='325' height='110' style={{  maxWidth: '100%' }}/>
+            <Image src="/img/price-image2.webp" alt='barber shop zdjecie robionej brody' id='price-image' width='325' height='110' style={{  maxWidth: '100%' }}/>
+            <Image src="/img/price-image.webp" alt='barber shop zdjecie robionej brody' id='price-image2' width='325' height='110' style={{  maxWidth: '100%' }}/>
           </div>
           <div className="col-lg-6 col-md-12 copy-container ml-auto">
             <div className="copy-content pr-4">
@@ -317,7 +309,7 @@ export default function Home() {
             </div>
             <div className='grid'>
               <LightGallery getCaptionFromTitleOrAlt={false} download={false} elementClassNames='grid-container' onInit={onInit} speed={500} plugins={[lgThumbnail, lgZoom]}>
-                {['/img/1.jpeg', '/img/2.jpeg', '/img/3.jpeg', '/img/4.jpeg', '/img/5.jpeg', '/img/6.jpeg', '/img/7.jpeg', '/img/8.jpeg'].map((src, index) => (
+                {['/img/1.webp', '/img/2.webp', '/img/3.webp', '/img/4.webp', '/img/5.webp', '/img/6.webp', '/img/7.webp', '/img/8.webp'].map((src, index) => (
                   <a href={src} key={index} className="grid-item">
                     <div className="service-block">
                       <Image

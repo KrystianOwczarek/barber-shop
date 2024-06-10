@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Script from 'next/script';
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,10 +12,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <head>
+    <html lang="pl">
+      <Head>
         <link rel="icon" href="img/logo.png" sizes="any" type='image/x-icon' />
-      </head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Tytuł Twojej Strony</title>
+        <meta name="description" content="Strona barbera z najlepszymi usługami fryzjerskimi i kosmetycznymi. Odkryj profesjonalizm i styl. Terminy online. Obejrzyj nasze projekty już dziś!"/>
+        <meta property="og:title" content="Tarber Shop | Raszków"/>
+        <meta property="og:description" content="Strona barbera z najlepszymi usługami fryzjerskimi i kosmetycznymi. Odkryj profesjonalizm i styl. Terminy online. Obejrzyj nasze projekty już dziś!" />
+      </Head>
       <body className={inter.className}>{children}</body>
     </html>
   );
