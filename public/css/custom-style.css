@@ -1057,10 +1057,13 @@ ul.social-box li {
 		margin-top: 29rem;
 		left: 0rem;
 		background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0 !important;
-		padding: 30px 0
+		padding: 30px 0;
+		z-index: 2;
 	}
 	#navbarSupportedContent li{
 		text-align: center;
+		position: relative;
+		z-index: 2;
 	}
 	#about .copy-container {
 	    background-color:rgba(255,255,255,0.9);
