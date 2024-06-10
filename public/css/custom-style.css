@@ -368,7 +368,7 @@ i.box-circle-solid{
 #price-image{
 	position: absolute;
 	top: 12rem;
-	left: 25rem;
+	left: 34rem;
 }
 #price-image2{
 	position: absolute;
@@ -971,6 +971,11 @@ ul.social-box li {
 #mobile-phone{
 	display: none;
 }
+@media (max-width: 1800px) {
+	#price-image{
+		left: 25rem !important;
+	}
+}
 /* ========== Responsive Stylings ========== */
 @media (max-width: 991px){
 	.container{
@@ -1156,8 +1161,7 @@ ul.social-box li {
 	}
 	.top-nav .navbar-nav li .nav-link{
 		width: 100%;
-		position: relative;
-		z-index: 500;
+		height: 100%;
 	}
 }
 
