@@ -73,7 +73,7 @@ export default function Home() {
     </div> : <>
     <nav className="navbar navbar-expand-md top-nav fixed-top light-header">
       <a className="navbar-brand-mobile" href="/">
-        <Image src="/img/logo.webp" alt='barber shop logo' width='110' height='110' style={{  maxWidth: '100%' }} loading='lazy'/>
+        <Image src="/img/logo.webp" alt='barber shop logo' width='110' height='110' style={{  maxWidth: '100%' }}/>
       </a>
       <div className="container-fluid">
         <button
@@ -87,7 +87,7 @@ export default function Home() {
           onClick={handleOpen}
         >
           <span className="navbar-toggler-icon">
-            <Image alt='barber shop menu' src="/img/icons/menu.webp" width='100' height='100' loading='lazy'/>
+            <Image alt='barber shop menu' src="/img/icons/menu.webp" width='100' height='100'/>
           </span>
         </button>
         <div className="navbar-collapse" id="navbarSupportedContent">        
@@ -137,7 +137,7 @@ export default function Home() {
             <p>profesjonalne podejście i lata doświadczenia</p>
           </div>
           <div className='second-part-position'>
-            <Image alt='barber shop logo' src="/img/logo.webp" width='250' height='100' loading='lazy'/>
+            <Image alt='barber shop logo' src="/img/logo.webp" width='250' height='100'/>
           </div>
         </div>
         <div className='second-banner-part'>
