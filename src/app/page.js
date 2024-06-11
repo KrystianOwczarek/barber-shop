@@ -145,7 +145,7 @@ export default function Home() {
           <Fade arrows={false} duration={3000} autoplay={true} infinite={true} canSwipe={false}>
             {slideImages.map((slideImage, index)=> (
               <div key={index}>~
-                <Image priority={true} style={{ ...divStyle}} alt='barber shop baner' src={slideImage.url} width='500' height='500'/>
+                <Image priority={true} style={{ ...divStyle}} alt='barber shop baner' src={slideImage.url} width='1500' height='400'/>
               </div>
             ))} 
           </Fade>
