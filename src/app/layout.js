@@ -14,10 +14,22 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pl">
       <Head>
+        <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://barbershopraszkow.pl",
+          "@type": "Website",
+          "headline": "Barber Shop | Raszków",
+          "datePublished": "2024-06-11",
+          "author": {
+            "@type": "Person",
+            "name": "Krystian Owczarek"
+          },
+          // Additional structured data properties...
+        })}</script>
         <link rel="icon" href="img/logo.png" sizes="any" type='image/x-icon' />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Tytuł Twojej Strony</title>
+        <title>Barber Shop | Raszków</title>
         <meta name="description" content="Strona barbera z najlepszymi usługami fryzjerskimi i kosmetycznymi. Odkryj profesjonalizm i styl. Terminy online. Obejrzyj nasze projekty już dziś!"/>
         <meta property="og:title" content="Tarber Shop | Raszków"/>
         <meta property="og:description" content="Strona barbera z najlepszymi usługami fryzjerskimi i kosmetycznymi. Odkryj profesjonalizm i styl. Terminy online. Obejrzyj nasze projekty już dziś!" />
