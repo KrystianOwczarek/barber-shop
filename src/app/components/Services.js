@@ -1,8 +1,10 @@
 import Image from 'next/image';
+import { motion } from "framer-motion"
 
-export default function Home() {
-    return(
-        <section id="services" className="info-section text-white bg-right bg-dark">
+export default function Home() {  
+
+  return(
+    <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}  transition={{ ease: "easeOut", duration: 3, delay: 0.25}} id="services" className="info-section text-white bg-right bg-dark">
       <div className="container">
         <div className="row">
           <div className="col-md-12">
@@ -60,6 +62,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
     )
 }

@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Barber Shop | Raszków</title>
         <meta name="description" content="Strona barbera z najlepszymi usługami fryzjerskimi i kosmetycznymi. Odkryj profesjonalizm i styl. Terminy online. Obejrzyj nasze projekty już dziś!"/>
-        <meta property="og:title" content="Tarber Shop | Raszków"/>
+        <meta property="og:title" content="Barber Shop | Raszków"/>
         <meta property="og:description" content="Strona barbera z najlepszymi usługami fryzjerskimi i kosmetycznymi. Odkryj profesjonalizm i styl. Terminy online. Obejrzyj nasze projekty już dziś!" />
       </Head>
       <body className={inter.className}>{children}</body>

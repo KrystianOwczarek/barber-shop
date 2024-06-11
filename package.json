@@ -13,11 +13,13 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "font-awesome": "^4.7.0",
+    "framer-motion": "^11.2.10",
     "lightgallery": "^2.7.2",
     "next": "14.2.3",
     "next-sitemap": "^4.2.3",
     "react": "^18",
     "react-dom": "^18",
+    "react-intersection-observer": "^9.10.3",
     "react-responsive-carousel": "^3.2.23",
     "react-slideshow-image": "^4.3.1"
   },

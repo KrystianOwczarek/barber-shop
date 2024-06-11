@@ -5,15 +5,17 @@ import LightGallery from 'lightgallery/react';
 import 'lightgallery/css/lg-thumbnail.css';
 import 'lightgallery/css/lg-zoom.css';
 import 'lightgallery/css/lightgallery.css';
+import { motion } from 'framer-motion';
 export default function Galery() {
     const onInit = () => {
         console.log('lightGallery has been initialized');
     };
 
   return (
-    <section
+    <motion.section
       id="galery"
       className="info-section sec-bg-05 text-white bg-right bg-dark bg-overlay"
+      initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}  transition={{ ease: "easeOut", duration: 3, delay: 0.25 }}
     >
       <div className="container">
         <div className="row">
@@ -58,6 +60,6 @@ export default function Galery() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

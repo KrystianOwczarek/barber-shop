@@ -1,8 +1,9 @@
 import { Carousel } from 'react-responsive-carousel';
+import { motion } from 'framer-motion';
 
 export default function Testimontials() {
   return (
-    <section id="testimonial" className="testimonial-section sec-bg-04 py-5">
+    <motion.section initial={{ opacity: 0 }} viewport={{ once: true }}  whileInView={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 3, delay: 0.25 }} id="testimonial" className="testimonial-section sec-bg-04 py-5">
       <div className="container">
         <div className="row">
           <div className="head-box text-center mb-3 col-md-12 mt-5">
@@ -114,6 +115,6 @@ export default function Testimontials() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

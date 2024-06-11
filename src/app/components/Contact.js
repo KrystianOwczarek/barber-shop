@@ -1,8 +1,11 @@
+import { motion } from "framer-motion";
+
 export default function Contact() {
   return (
-    <section
+    <motion.section
       id="contactinfo"
       className="testimonial-section sec-bg-05 py-5 bg-overlay"
+      initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}  transition={{ ease: "easeOut", duration: 3, delay: 0.25}}
     >
       <div className="row">
         <div className="head-box text-center mb-3 col-md-12 mt-4">
@@ -57,6 +60,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

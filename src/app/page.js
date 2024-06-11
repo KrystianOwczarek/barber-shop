@@ -10,11 +10,12 @@ import '../../public/css/loaders.css';
 import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import dynamic from 'next/dynamic';
+import { motion } from "framer-motion"
 
 export default function Home() {
     const [loading, setLoading] = useState(true);
     const DynamicServices = dynamic(() => import('./components/Services'));
-    const DynamicAbout = dynamic(() => import('./components/About'));
+    const DynamicPrice = dynamic(() => import('./components/Price'));
     const DynamicGalery = dynamic(() => import('./components/Galery'));
     const DynamicTestimontials = dynamic(() => import('./components/Testimontials'));
     const DynamicContact = dynamic(() => import('./components/Contact'));
@@ -48,9 +49,7 @@ export default function Home() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundSize: 'cover',
-      width: '100%',
-      height: '1000px'
+      backgroundSize: 'contain',
     }
     const slideImages = [
       {
@@ -71,7 +70,10 @@ export default function Home() {
         <div />
       </div>
     </div> : <>
-    <nav className="navbar navbar-expand-md top-nav fixed-top light-header">
+    <motion.nav initial={{ y: '-15vh' }}
+      animate={{ y: 0 }}
+      transition={{ type: 'spring', stiffness: 200, damping: 25, mass: 0.7 }}
+      className="navbar navbar-expand-md top-nav fixed-top light-header">
       <a className="navbar-brand-mobile" href="/">
         <Image src="/img/logo.webp" alt='barber shop logo' width='110' height='110' style={{  maxWidth: '100%' }}/>
       </a>
@@ -128,8 +130,8 @@ export default function Home() {
           </ul>
         </div>
       </div>
-    </nav>
-    <section id="home" className="intro">
+    </motion.nav>
+    <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: 2 }} transition={{ ease: "easeOut", duration: 4, delay: 1 }} id="home" className="intro">
       <div className='home-container'>
         <div className='first-banner-part'>
           <div className='first-part-position'>
@@ -141,46 +143,30 @@ export default function Home() {
           </div>
         </div>
         <div className='second-banner-part'>
-          {/* <Image alt='barber shop logo' src="/img/baner.webp" width='2000' height='100'/> */}
           <Fade arrows={false} duration={3000} autoplay={true} infinite={true} canSwipe={false}>
             {slideImages.map((slideImage, index)=> (
               <div key={index}>~
-                <Image priority={true} style={{ ...divStyle}} alt='barber shop baner' src={slideImage.url} width='1500' height='400'/>
+                <Image id='image' priority={true} style={{ ...divStyle}} alt='barber shop baner' src={slideImage.url} width='1500' height='800'/>
               </div>
             ))} 
           </Fade>
         </div>
       </div>
-      {/* <div className="container">
-        <div className="row">
-          <div className="text-center pt-5">
-            <div className="intro-caption mt-5"> */}
-              {/* <h1 className="text-white mb-2">
-                Barber Shop Raszków
-              </h1>
-              <p className="text-white mb-4">
-                {" "}
-                Serdecznie zapraszamy do odwiedzenia naszego Barber Shopu w Raszkowie. Jesteśmy gotowi, aby zadbać o Twój wygląd. Zapraszamy do umawiania się na wizyty z wyprzedzeniem!
-              </p> */}
-            {/* </div>
-          </div>
-        </div>
-      </div> */}
-    </section>
+    </motion.section>
     {/* Info block 1 */}
     <DynamicServices/>
     {/* Content block 1 */}
-    <DynamicAbout/>
+    <DynamicPrice/>
     <DynamicGalery/>
     {/* Testimonial Block 01*/}
     <DynamicTestimontials/>
     <DynamicContact/>
     {/* Contact Block */}
-    <section id="contact" className="contact-section bg-dark">
+    <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: 2 }} transition={{ ease: "easeOut", duration: 4, delay: 1 }} id="contact" className="contact-section bg-dark">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2471.81895503101!2d17.72612047688902!3d5171805469529222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4705359852922cb1%3A0x82690071c159db22!2sBarber%20shop!5e0!3m2!1spl!2spl!4v1717077444759!5m2!1spl!2spl" width="100%" height="100%" style={{ border: '0' }} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-    </section>
+    </motion.section>
     {/* footer Block */}
-    <div className="copy-footer bg-primary py-2">
+    <div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: 2 }} transition={{ ease: "easeOut", duration: 4, delay: 1 }} className="copy-footer bg-primary py-2">
       <div className="container text-center text-light">
         ©{" "}
         <a href="https://portfolio-tfuf.onrender.com" target="_blank">

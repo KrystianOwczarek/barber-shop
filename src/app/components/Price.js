@@ -1,8 +1,9 @@
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
-export default function About() {
+export default function Price() {
     return(
-        <section id="about" className="copy-content-sec sec-bg-02 h-100">
+      <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}  transition={{ ease: "easeOut", duration: 3, delay: 0.25 }} id="about" className="copy-content-sec sec-bg-02 h-100">
       <div className="container">
         <div className="row display-flex">
           <div className="col-lg-6 col-md-12 copy-container ml-auto margin-right-img">
@@ -69,6 +70,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
     )
 }
