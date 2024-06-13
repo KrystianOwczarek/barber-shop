@@ -145,7 +145,7 @@ export default function Home() {
         <div className='second-banner-part'>
           <Fade arrows={false} duration={3000} autoplay={true} infinite={true} canSwipe={false}>
             {slideImages.map((slideImage, index)=> (
-              <div key={index}>~
+              <div key={index}>
                 <Image id='image' priority={true} style={{ ...divStyle}} alt='barber shop baner' src={slideImage.url} width='1500' height='800'/>
               </div>
             ))} 

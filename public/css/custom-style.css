@@ -1026,6 +1026,18 @@ ul.social-box li {
 }
 
 @media (max-width: 767px){
+	.first-part-position{
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+	.second-part-position{
+		height: 100%;
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+	}
+	.second-banner-part{
+		width: 100%;
+	}
 	#home{
 		scroll-margin-top: 100px;
 	}
@@ -1098,8 +1110,9 @@ ul.social-box li {
 	}
 
 	section.copy-content-sec{
-		height: 800px !important;
+		height: auto !important;
 		padding-top: 0px;
+		padding-bottom: 0px;
 	}
 	.copy-content-sec h2{
 		font-size: 2.6rem;
@@ -1133,21 +1146,32 @@ ul.social-box li {
 		flex-flow: row nowrap;
 		padding-left: 1rem;
 	}
-
 	.navbar-brand{
-		display: none;
-	}
-	.margin-right-img{
 		display: none;
 	}
 	.first-banner-part{
 		width: 100%;
 	}
-	.second-banner-part{
-		display: none;
+	.display-flex{
+		flex-flow: column nowrap;
+	}
+	.copy-container{
+		flex-flow: column nowrap;
+	}
+	#price-image{
+		margin-bottom: 1rem;
+	}
+	#price-image, #price-image2{
+		position: relative;
+		left: 0;
+		top: 0;
 	}
 	#home{
-		margin-top: 2.5rem;
+		margin-top: 15.5rem;
+	}
+	.home-container{
+		height: auto;
+		flex-flow: column nowrap;
 	}
 	.margin-left{
 		margin-left: 0rem;
