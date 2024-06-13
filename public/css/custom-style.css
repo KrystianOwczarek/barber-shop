@@ -1030,6 +1030,13 @@ ul.social-box li {
 }
 
 @media (max-width: 767px){
+
+	@supports (-webkit-touch-callout: none) {
+		/* CSS specific to iOS devices */ 
+		#home{
+			margin-top: 105px;
+		}
+	}
 	.fixed-top{
 		position: relative;
 	  }
@@ -1172,9 +1179,6 @@ ul.social-box li {
 		position: relative;
 		left: 0;
 		top: 0;
-	}
-	#home{
-		margin-top: 105px;
 	}
 	.home-container{
 		height: auto;
