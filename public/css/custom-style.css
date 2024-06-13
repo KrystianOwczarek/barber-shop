@@ -1030,12 +1030,13 @@ ul.social-box li {
 }
 
 @media (max-width: 767px){
+	.fixed-container{
+		display: flex;
+		flex-flow: column nowrap;
+	}
 
-	@supports (-webkit-touch-callout: none) {
-		/* CSS specific to iOS devices */ 
-		#home{
-			margin-top: 105px;
-		}
+	.intro{
+		height: 765px;
 	}
 	.fixed-top{
 		position: relative;
