@@ -35,6 +35,17 @@ export default function Home() {
       }
     }
 
+    if(document.body.clientWidth < 768){
+      document.body.addEventListener('scroll', () => {
+        const nav = document.querySelector('.navbar');
+        if(document.body.scrollTop <= 0){
+          nav.setAttribute('style', 'position:relative !important');
+        }else{
+          nav.setAttribute('style', 'position:fixed !important');
+        }
+      })
+    }
+      
     const handleTouch = (e) => {
       window.href = e.target.href
     }
@@ -51,6 +62,7 @@ export default function Home() {
       justifyContent: 'center',
       backgroundSize: 'contain',
     }
+
     const slideImages = [
       {
         url: '/img/baner.webp',
