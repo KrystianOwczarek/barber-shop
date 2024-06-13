@@ -87,7 +87,7 @@ export default function Home() {
         <div />
         <div />
       </div>
-    </div> : <div className='fixed-container'>
+    </div> : <>
     <motion.nav initial={{ y: '-15vh' }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 200, damping: 25, mass: 0.7 }}
@@ -192,7 +192,7 @@ export default function Home() {
         </a>{" "}
         <span id="year" /> - tworzenie stron www / aplikacji webowych / aplikacji mobilnych / <a href='/rodo' target="_blank"><strong>Polityka prywatności i RODO</strong></a>
       </div>
-    </div></div> )}
+    </div></> )}
   </>  
   );
 }
