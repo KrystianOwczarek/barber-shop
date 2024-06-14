@@ -39,8 +39,8 @@ export default function Galery() {
                   "/img/4.webp",
                   "/img/5.webp",
                   "/img/6.webp",
-                  "/img/7.webp",
-                  "/img/8.webp",
+                  "/img/7.jpeg",
+                  "/img/8.jpeg",
                 ].map((src, index) => (
                   <a href={src} key={index} className="grid-item">
                     <div className="service-block">
