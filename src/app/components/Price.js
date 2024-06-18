@@ -22,6 +22,7 @@ export default function Price() {
                     <li className="list-group-item">Strzyżenie włosów długich. <span className='barber-color'>70 zł</span></li>
                     <li className="list-group-item">Strzyżenie brody. . . . . . . . . . . . . .<span className='barber-color'>45 zł</span></li>
                     <li className="list-group-item">Combo 1 + trymowanie brody brzytwą. . . . . . . . . . . . . . . . . . . . . . . <span className='barber-color'>85 zł</span></li>
+                    <li className="list-group-item">Odsiwianie włosów lub urody. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .<span className='barber-color'>85 zł</span></li>
                 </div>
                 <div className="col-md-6">
                     <li className="list-group-item">Golenie głowy brzytwą. . . . . . .<span className='barber-color'>50 zł</span></li>
@@ -29,6 +30,7 @@ export default function Price() {
                     <li className="list-group-item">Woskowanie nos. . . . . . . . . . . . . . . .<span className='barber-color'>15 zł</span></li>                
                     <li className="list-group-item">Woskowanie brwi. . . . . . . . . . . . . . .<span className='barber-color'>15 zł</span></li>
                     <li className="list-group-item">Stylizacja włosów. . . . . . . . . . . . <span className='barber-color'>25 zł</span></li>
+                    <li className="list-group-item">Trwała - loki (wycena indywidualna po wcześniejszej konsultacji)</li>
                     </div>
               </div>
               <div className="row" id='mobile-tablet'>
@@ -39,6 +41,7 @@ export default function Price() {
                     <li className="list-group-item">Strzyżenie włosów długich. . . . . . . . . . . . <span className='barber-color'>70 zł</span></li>
                     <li className="list-group-item">Strzyżenie brody. . . . . . . . . . . . . . . . . . . . . . . . .<span className='barber-color'>45 zł</span></li>
                     <li className="list-group-item">Combo 1 + trymowanie brody brzytwą.<span className='barber-color'>85 zł</span></li>
+                    <li className="list-group-item">Odsiwianie włosów lub urody. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .<span className='barber-color'>85 zł</span></li>
                 </div>
                 <div className="col-md-6">
                     <li className="list-group-item">Golenie głowy brzytwą. . . . . . . . . . . . .<span className='barber-color'>50 zł</span></li>
@@ -46,6 +49,7 @@ export default function Price() {
                     <li className="list-group-item">Woskowanie nos. . . . . . . . . . . . . . . . .  . . . . .<span className='barber-color'>15 zł</span></li>                
                     <li className="list-group-item">Woskowanie brwi. . . . . . . . . . . . . . . . .  . . . . <span className='barber-color'>15 zł</span></li>
                     <li className="list-group-item">Stylizacja włosów. . . . . . . . . . . . . . . . . . <span className='barber-color'>25 zł</span></li>
+                    <li className="list-group-item">Trwała - loki (wycena indywidualna po wcześniejszej konsultacji)</li>
                 </div>
               </div>
               <div className="row" id='mobile-phone'>
@@ -56,13 +60,15 @@ export default function Price() {
                     <li className="list-group-item">Strzyżenie włosów długich. . . . . <span className='barber-color'>70 zł</span></li>
                     <li className="list-group-item">Strzyżenie brody. . . . . . . . . . . . . . . . . .<span className='barber-color'>45 zł</span></li>
                     <li className="list-group-item">Combo 1+trymowanie brody brzytwą. . . . . . . . . . . . . . . . . . . . . . . . . . . .<span className='barber-color'>85zł</span></li>
+                    <li className="list-group-item">Odsiwianie włosów lub urody. . . <span className='barber-color'>85 zł</span></li>
                 </div>
                 <div className="col-md-6">
                     <li className="list-group-item">Golenie głowy brzytwą. . . . . . . . . .<span className='barber-color'>50 zł</span></li>
                     <li className="list-group-item">Woskowanie uszy. . . . . . . . . . . . . . . . . .<span className='barber-color'>15 zł</span></li>
-                    <li className="list-group-item">Woskowanie nos. . . . . . . . . . . . . . . . .  . .<span className='barber-color'>15 zł</span></li>                
+                    <li className="list-group-item">Woskowanie nos. . . . . . . . . . . . . . . . . . .<span className='barber-color'>15 zł</span></li>                
                     <li className="list-group-item">Woskowanie brwi. . . . . . . . . . . . . . . . . .<span className='barber-color'>15 zł</span></li>
                     <li className="list-group-item">Stylizacja włosów. . . . . . . . . . . . . . . <span className='barber-color'>25 zł</span></li>
+                    <li className="list-group-item">Trwała - loki (wycena indywidualna po wcześniejszej konsultacji)</li>
                 </div>
               </div>
             </div>
