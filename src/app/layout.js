@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from 'next/script';
 import Head from 'next/head';
+import GoogleAnalytics from './GoogleAnalytics';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pl">
+      <GoogleAnalytics />
       <Head>
         <script type="application/ld+json">
         {JSON.stringify({
@@ -33,6 +35,8 @@ export default function RootLayout({ children }) {
         <meta name="description" content="Strona barbera z najlepszymi usługami fryzjerskimi i kosmetycznymi. Odkryj profesjonalizm i styl. Terminy online. Obejrzyj nasze projekty już dziś!"/>
         <meta property="og:title" content="Barber Shop | Raszków"/>
         <meta property="og:description" content="Strona barbera z najlepszymi usługami fryzjerskimi i kosmetycznymi. Odkryj profesjonalizm i styl. Terminy online. Obejrzyj nasze projekty już dziś!" />
+        {/* <!-- Google tag (gtag.js) --> */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHMCFL9JZ4"></script>
       </Head>
       <body className={inter.className}>{children}</body>
     </html>

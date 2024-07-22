@@ -187,8 +187,8 @@ export default function Home() {
     <div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: 2 }} transition={{ ease: "easeOut", duration: 4, delay: 1 }} className="copy-footer bg-primary py-2">
       <div className="container text-center text-light">
         ©{" "}
-        <a href="https://portfolio-tfuf.onrender.com" target="_blank">
-          krystianowczarek.com
+        <a href="https://codesons.com" target="_blank">
+          codesons.com
         </a>{" "}
         <span id="year" /> - tworzenie stron www / aplikacji webowych / aplikacji mobilnych / <a href='/rodo' target="_blank"><strong>Polityka prywatności i RODO</strong></a>
       </div>
