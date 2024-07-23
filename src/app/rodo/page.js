@@ -154,7 +154,6 @@ export default function Home() {
                         <p>8) W sprawach dotyczących spraw związanych z przetwarzaniem przez naszą Firmę Państwa danych osobowych prosimy o skontaktowanie się:</p>
                         <ul>
                             <li>telefonicznie +48 668 637 979,</li>
-                            <li>drogą elektroniczną na adres: <a href="mailto:salon@studiobarber.pl">salon@barbershop.pl</a>,</li>
                             <li>osobiście w siedzibie naszej Firmy – po uprzednim telefonicznym uzgodnieniu terminu spotkania.</li>
                         </ul>
                     </li>
@@ -194,8 +193,8 @@ export default function Home() {
     <div className="copy-footer bg-primary py-2">
       <div className="container text-center text-light">
         ©{" "}
-        <a href="https://portfolio-tfuf.onrender.com" target="_blank">
-          krystianowczarek.com
+        <a href="https://codesons.com" target="_blank">
+          codesons.com
         </a>{" "}
         <span id="year" /> - tworzenie stron www / aplikacji webowych / aplikacji mobilnych / <a href='/rodo' target="_blank"><strong>Polityka prywatności i RODO</strong></a>
       </div>
