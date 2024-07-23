@@ -9,6 +9,10 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Barber Shop | Raszków",
   description: "Strona barbera z najlepszymi usługami fryzjerskimi i kosmetycznymi. Odkryj profesjonalizm i styl. Obejrzyj nasze projekty już dziś!",
+  twitter: {
+    card: "summary_large_image"
+  },
+  metadataBase: new URL("https://barbershopraszkow.pl/"),
 };
 
 export default function RootLayout({ children }) {
@@ -41,19 +45,19 @@ export default function RootLayout({ children }) {
         <meta name="description" content="Strona barbera z najlepszymi usługami fryzjerskimi i kosmetycznymi. Odkryj profesjonalizm i styl. Obejrzyj nasze projekty już dziś!"/>
         <meta property="og:title" content="Barber Shop | Raszków"/>
         <meta property="og:description" content="Strona barbera z najlepszymi usługami fryzjerskimi i kosmetycznymi. Odkryj profesjonalizm i styl. Obejrzyj nasze projekty już dziś!" />
+        <meta property="og:url" content="https://barbershopraszkow.pl"/>
+        <meta property="og:type" content="website"/>
         <meta property="og:image" content="https://barbershopraszkow.pl/img/opengraph.jpg" />
         <meta property="og:image:secure_url" content="https://barbershopraszkow.pl/img/opengraph.jpg" />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:width" content="1200" />
         <meta property="og:height" content="640" />
         <meta property="og:image:alt" content="barber shop banner" />
+
         <meta name="twitter:title" content="Barber Shop | Raszków" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="https://barbershopraszkow.pl/img/opengraph.jpg" />
         <meta name="twitter:description" content="Strona barbera z najlepszymi usługami fryzjerskimi i kosmetycznymi. Odkryj profesjonalizm i styl. Obejrzyj nasze projekty już dziś!" />
-        <meta property="og:url" content="https://barbershopraszkow.pl"/>
-        <meta property="og:type" content="website"/>
-
         <meta property="twitter:domain" content="barbershopraszkow.pl"/>
         <meta property="twitter:url" content="https://barbershopraszkow.pl"/>
 
