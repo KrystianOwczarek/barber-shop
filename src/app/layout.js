@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
           },
           // Additional structured data properties...
         })}</script>
-        <link rel="icon" href="img/logo.png" sizes="any" type='image/x-icon' />
+        <link rel="icon" type="image/png" href="/logo.png" sizes="any"/>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Barber Shop | Raszków</title>
