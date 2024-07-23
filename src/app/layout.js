@@ -12,7 +12,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image"
   },
-  metadataBase: new URL("https://barbershopraszkow.pl/"),
+  metadataBase: new URL("https://barbershopraszkow.pl"),
 };
 
 export default function RootLayout({ children }) {
