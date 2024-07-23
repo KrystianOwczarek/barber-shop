@@ -41,15 +41,15 @@ export default function RootLayout({ children }) {
         <meta name="description" content="Strona barbera z najlepszymi usługami fryzjerskimi i kosmetycznymi. Odkryj profesjonalizm i styl. Obejrzyj nasze projekty już dziś!"/>
         <meta property="og:title" content="Barber Shop | Raszków"/>
         <meta property="og:description" content="Strona barbera z najlepszymi usługami fryzjerskimi i kosmetycznymi. Odkryj profesjonalizm i styl. Obejrzyj nasze projekty już dziś!" />
-        <meta property="og:image" content="https://app.gemoo.com/share/image-annotation/674413932995805184?codeId=v6a6eKmzQ1gNl&origin=imageurlgenerator&card=674413931162906624" />
-        <meta property="og:image:secure_url" content="https://app.gemoo.com/share/image-annotation/674413932995805184?codeId=v6a6eKmzQ1gNl&origin=imageurlgenerator&card=674413931162906624" />
+        <meta property="og:image" content="https://postimg.cc/XBwkGJ84" />
+        <meta property="og:image:secure_url" content="https://postimg.cc/XBwkGJ84" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:width" content="1200" />
         <meta property="og:height" content="640" />
         <meta property="og:image:alt" content="barber shop banner" />
         <meta name="twitter:title" content="Barber Shop | Raszków" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://app.gemoo.com/share/image-annotation/674413932995805184?codeId=v6a6eKmzQ1gNl&origin=imageurlgenerator&card=674413931162906624" />
+        <meta name="twitter:image" content="https://postimg.cc/XBwkGJ84" />
         <meta name="twitter:description" content="Strona barbera z najlepszymi usługami fryzjerskimi i kosmetycznymi. Odkryj profesjonalizm i styl. Obejrzyj nasze projekty już dziś!" />
         {/* <!-- Google tag (gtag.js) --> */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHMCFL9JZ4"></script>
