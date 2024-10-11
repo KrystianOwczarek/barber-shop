@@ -1,13 +1,14 @@
 'use client';
-import Navigation from "./Navigation";
+import dynamic from 'next/dynamic'
 import Image from "next/image";
 import Link from "next/link";
 import Lottie from 'react-lottie';
 import animationData from '/public/lotties/scissors.json';
 import { useEffect, useState } from "react";
-import Button from "./Button";
 
 export default function Hero() {
+  const DynamicNavigation = dynamic(() => import('../components/Navigation'), { ssr: false });
+  const DynamicButton = dynamic(() => import('./Button'), { ssr: false });
 
   const defaultOptions = {
     loop: true,
@@ -33,7 +34,7 @@ export default function Hero() {
 
   return (
     <div id="background-image">
-      <Navigation />
+      <DynamicNavigation />
       <div className="max-w-full w-full flex justify-center">
         <section
           id="hero"
@@ -61,7 +62,7 @@ export default function Hero() {
             </p>
 
             <div className="flex w-full flex-row justify-center align-center mb-6">
-              <Button/>
+              <DynamicButton/>
             </div>
             <div className="flex w-full flex-col justify-center items-center mb-4">
               <p className="text-white text-center text-lg p-3 sm:p-0 mb-4">“Polecam z całego serca świetne podejście do klienta bardzo dobrze wykonane obcięcie”</p>

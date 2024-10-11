@@ -1,10 +1,25 @@
-import Navigation from "./Navigation";
+'use client';
 import Link from "next/link";
+import { useEffect } from "react";
+import dynamic from 'next/dynamic'
 
 export default function Header() {
+  const DynamicNavigation = dynamic(() => import('../components/Navigation'), { ssr: false });
+
+  useEffect(() => {
+    setTimeout(() => {
+        const navs = document.querySelectorAll('nav');
+        const button = document.querySelector('#mobile-open-button');
+            navs.forEach((nav) => {
+                nav.style.visibility = 'hidden';
+            });    
+            button.style.visibility = 'hidden';
+    }, 300)
+  }, [])
+
   return (
     <div id="background-image-header">
-      <Navigation />
+      <DynamicNavigation />
       <section
         id="hero"
         className="max-w-full w-full flex flex-col-reverse justify-start sm:flex-row p-6 items-center gap-8 mt-20 sm:mt-36 scroll-mt-80"

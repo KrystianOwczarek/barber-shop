@@ -1,23 +1,11 @@
-'use client';
-import { useEffect } from "react";
 import dynamic from 'next/dynamic'
 
 export default function Home() {
     const DynamicHeader = dynamic(() => import('../../components/Header'), { ssr: false });
-    const DynamicPrivacyPolicy = dynamic(() => import('../../components/PrivacyPolicy'));
-    const DynamicFooter = dynamic(() => import('../../components/Footer'));
+    const DynamicPrivacyPolicy = dynamic(() => import('../../components/PrivacyPolicy'), { ssr: false });
+    const DynamicFooter = dynamic(() => import('../../components/Footer'), { ssr: false });
 
-    useEffect(() => {
-        setTimeout(() => {
-            const navs = document.querySelectorAll('nav');
-            const button = document.querySelector('#mobile-open-button');
-                navs.forEach((nav) => {
-                    nav.style.visibility = 'hidden';
-                });    
-                button.style.visibility = 'hidden';
-        }, 300)
-        
-    }, [])
+
 
   return (
     <>

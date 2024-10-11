@@ -1,7 +1,4 @@
-"use client";
-import { FaArrowRightLong } from "react-icons/fa6";
-
-export default function PrivacyPolicy() {
+ export default function PrivacyPolicy() {
   return (
     <section
       id="privacy-policy"

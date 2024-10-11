@@ -1,12 +1,15 @@
 'use client';
-import EmblaCarousel from "./EmblaCarousel";
-import EmblaCarouselMobile from "./EmblaCarouselMobile";
+import dynamic from 'next/dynamic'
 import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function Gallery() {
+  const DynamicEmblaCarousel = dynamic(() => import('./EmblaCarousel'), { ssr: false });
+  const DynamicEmblaCarouselMobile = dynamic(() => import('./EmblaCarouselMobile'), { ssr: false });
+  
   const OPTIONS = { align: 'start', loop: true };
   const [slides, setSlides] = useState([]);
+
 
   const getImage = async () => {
     const response = await axios.get('https://barber-shop-strapi.onrender.com/api/upload/files?sort[0]=name');
@@ -32,8 +35,8 @@ export default function Gallery() {
       <p className="text-white text-lg sm:text-2xl margin-bottom text-center">
         Przeglądaj moje starannie wykonane fryzury i cięcia
       </p>
-        <EmblaCarouselMobile slides={slides} options={OPTIONS} />
-        <EmblaCarousel slides={slides} options={OPTIONS} />
+        <DynamicEmblaCarouselMobile slides={slides} options={OPTIONS} />
+        <DynamicEmblaCarousel slides={slides} options={OPTIONS} />
       <div className="box-4"></div>
     </section>
   );
