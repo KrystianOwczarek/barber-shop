@@ -1,7 +1,5 @@
 "use client";
 import { FaArrowRightLong } from "react-icons/fa6";
-import Link from "next/link";
-import Image from "next/image";
 
 export default function PrivacyPolicy() {
   return (

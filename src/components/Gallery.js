@@ -1,5 +1,4 @@
 'use client';
-import Image from "next/image";
 import EmblaCarousel from "./EmblaCarousel";
 import EmblaCarouselMobile from "./EmblaCarouselMobile";
 import axios from "axios";

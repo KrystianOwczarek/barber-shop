@@ -20,7 +20,7 @@ export default function Footer() {
           }}
           className="w-full sm:w-5/6 flex flex-col"
         >
-          <Image className="image-5" src='/image/logo.webp' alt='logo' width={160} height={160}/>
+          <Image className="image-5" src='/image/logo.webp' alt='logo' width={160} height={160} loading='lazy' />
           <Link target='_blank' href='https://www.facebook.com/people/Barber-Shop-Raszków/100095056908881/'><div className="image-6 mt-5"  alt='logo' width={152} height={32}/></Link>
         </li>
         <li

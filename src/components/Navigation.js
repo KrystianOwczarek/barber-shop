@@ -79,6 +79,7 @@ export default function Navigation() {
             height={64}
             src="/image/logo.webp"
             alt="logo barber shop raszków"
+            loading='lazy'
           />
           <p className="ml-3 sm:ml-5 barber-font">Barber Shop</p>
         </Link>
@@ -176,7 +177,7 @@ export default function Navigation() {
             </Link>
           </nav>
           </div>
-        <Link href='#hero'><div ref={circleRef} className='circle'><Image src='/image/down-arrow.png' alt='down arrow' width={28} height={16}/></div></Link>
+        <Link href='#hero'><div ref={circleRef} className='circle'><Image src='/image/down-arrow.png' alt='down arrow' width={28} height={16} loading='lazy' /></div></Link>
       </section>
     </header>
   );

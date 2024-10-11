@@ -38,7 +38,7 @@ const EmblaCarousel = (props) => {
         <div className="embla__container">
           {slides.map((slide, index) => (
             <div className="embla__slide" key={index} >
-                <Image style={{ transform: index % 2 === 0 ? 'translateY(-50px)' : 'translateY(50px)', borderRadius: '5px' }} src={slide} alt='portfolio image' width={300} height={600} />
+                <Image style={{ transform: index % 2 === 0 ? 'translateY(-50px)' : 'translateY(50px)', borderRadius: '5px' }} src={slide} alt='portfolio image' width={300} height={600} loading='lazy' />
             </div>
           ))}
         </div>

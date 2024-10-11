@@ -13,7 +13,7 @@ const EmblaCarousel = (props) => {
         <div className="embla__container-mobile">
           {slides.map((slide, index) => (
             <div className="embla__slide-mobile" key={index}>
-                <Image style={{ borderRadius: '5px', width: '100%', height: '100%' }} src={slide} alt='portfolio image' width={300} height={600} />
+                <Image style={{ borderRadius: '5px', width: '100%', height: '100%' }} src={slide} alt='portfolio image' width={300} height={600} loading='lazy' />
             </div>
           ))}
         </div>
