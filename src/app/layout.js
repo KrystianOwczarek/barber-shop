@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHMCFL9JZ4"></script>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-LHMCFL9JZ4" strategy="lazyOnload"></Script>
     </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

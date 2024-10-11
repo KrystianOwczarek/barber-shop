@@ -36,7 +36,7 @@ export const usePrevNextButtons = (emblaApi, onButtonClick) => {
   }
 }
 
-export const PrevButton = (props) => {
+export const PrevButton = React.memo((props) => {
   const { children, ...restProps } = props
 
   return (
@@ -54,9 +54,9 @@ export const PrevButton = (props) => {
       {children}
     </button>
   )
-}
+})
 
-export const NextButton = (props) => {
+export const NextButton = React.memo((props) => {
   const { children, ...restProps } = props
 
   return (
@@ -74,4 +74,4 @@ export const NextButton = (props) => {
       {children}
     </button>
   )
-}
+})

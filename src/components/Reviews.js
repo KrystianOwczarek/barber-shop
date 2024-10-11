@@ -13,7 +13,7 @@ export default function Reviews() {
         <div className="flex justify-center mt-8">
         <div class="tagembed-widget" style={{ width:'100%', height:'100%' }} data-widget-id="2131558" data-tags="false"  view-url="https://widget.tagembed.com/2131558"></div>        
         </div>
-        <Script src="https://widget.tagembed.com/embed.min.js" type="text/javascript"></Script>      
+        <Script src="https://widget.tagembed.com/embed.min.js" type="text/javascript" strategy="lazyOnload"></Script>      
         </section>
     </div>
   );
