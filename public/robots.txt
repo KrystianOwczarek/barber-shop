@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://barbershopraszkow.pl
-
-# Sitemaps
-Sitemap: https://barbershopraszkow.pl/sitemap.xml

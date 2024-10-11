@@ -1,0 +1,119 @@
+.buttonWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 24px;
+  background-color: #292929;
+  color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  width: 250px;
+  height: 55px;
+  border-radius: 5px;
+  animation: pulse 1s infinite;
+}
+
+.button2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 24px;
+  background-color: #292929;
+  color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  width: 250px;
+  height: 55px;
+  border-radius: 5px;
+}
+
+.button:hover{
+  background-color: #323232;
+}
+
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05) }
+}
+
+.button span {
+  position: absolute;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.button2 span {
+  position: absolute;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.sweepOut {
+  animation: sweepOut 0.5s forwards;
+}
+
+.broom {
+  position: absolute;
+  top: -5px;
+  left: 20px;
+  animation: sweep 1s ease forwards;
+  /* Wywołuje animację zmiotki */
+}
+
+@keyframes sweep {
+  0% {
+    transform: rotate(15deg) translateX(-10px);
+    left: 10%;
+  }
+
+  100% {
+    transform: rotate(-70deg) translateX(10px);
+    /* Przesuwa zmiotkę w prawo */
+    left: 90%;
+  }
+}
+
+@keyframes sweepOut {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(150%);
+    opacity: 0;
+  }
+}
+
+.phoneNumber {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards 0.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .button{
+    width: 200px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
