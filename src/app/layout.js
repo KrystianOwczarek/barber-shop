@@ -27,15 +27,12 @@ export default function RootLayout({ children }) {
       <meta property="og:type" content="website" />
       <meta property="og:url" content="http://barbershopraszkow.pl" />
       <meta property="og:locale" content="pl_PL" />
-      <meta property="og:image" content="http://barbershopraszkow.pl/image/barber-shop-baner.png" />
-      <meta property="og:image:secure_url" content="http://barbershopraszkow.pl/image/barber-shop-baner.png" />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="640" />
       <meta property="og:image:alt" content="Logo Barber Shop Raszków" />
       <meta name="twitter:title" content="Barber Shop | Raszków" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content="http://barbershopraszkow.pl/image/barber-shop-baner.png" />
       <meta name="twitter:description" content="Oferujemy najlepsze usługi fryzjerskie i kosmetyczne. Odkryj profesjonalizm i styl. Obejrzyj nasze projekty!" />
       <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
