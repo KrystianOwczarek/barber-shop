@@ -102,7 +102,7 @@ export default function Prices() {
       }  else if (index === 3) {
         underscoresCount -= 6;
       }else {
-        underscoresCount -= 5;
+        underscoresCount -= 6;
       }
     }
 
