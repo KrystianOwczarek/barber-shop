@@ -72,7 +72,7 @@ export default function Navigation() {
   return (
     <header className="text-white top-0 z-10 min-h-28">
       <section className="max-w-7xl mx-auto p-4 flex items-center min-h-28">
-      <div className="w-full sm:w-1/2 flex justify-start">
+      <div className="w-120 sm:w-1/2 flex justify-start">
         <Link href="/" className="z-20 flex flex-row justify-center items-center">
           <Image
             width={64}

@@ -4,9 +4,15 @@
 }
 
 .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   font-size: 24px;
   background-color: #292929;
@@ -16,13 +22,20 @@
   width: 250px;
   height: 55px;
   border-radius: 5px;
-  animation: pulse 1s infinite;
+  -webkit-animation: pulse 1s infinite;
+          animation: pulse 1s infinite;
 }
 
 .button2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   font-size: 24px;
   background-color: #292929;
@@ -39,56 +52,101 @@
 }
 
 
+@-webkit-keyframes pulse {
+  0% { -webkit-transform: scale(1); transform: scale(1); }
+  100% { -webkit-transform: scale(1.05); transform: scale(1.05) }
+}
+
+
 @keyframes pulse {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.05) }
+  0% { -webkit-transform: scale(1); transform: scale(1); }
+  100% { -webkit-transform: scale(1.05); transform: scale(1.05) }
 }
 
 .button span {
   position: absolute;
   display: inline-block;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .button2 span {
   position: absolute;
   display: inline-block;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .sweepOut {
-  animation: sweepOut 0.5s forwards;
+  -webkit-animation: sweepOut 0.5s forwards;
+          animation: sweepOut 0.5s forwards;
 }
 
 .broom {
   position: absolute;
   top: -5px;
   left: 20px;
-  animation: sweep 1s ease forwards;
+  -webkit-animation: sweep 1s ease forwards;
+          animation: sweep 1s ease forwards;
   /* Wywołuje animację zmiotki */
 }
 
-@keyframes sweep {
+@-webkit-keyframes sweep {
   0% {
-    transform: rotate(15deg) translateX(-10px);
+    -webkit-transform: rotate(15deg) translateX(-10px);
+            transform: rotate(15deg) translateX(-10px);
     left: 10%;
   }
 
   100% {
-    transform: rotate(-70deg) translateX(10px);
+    -webkit-transform: rotate(-70deg) translateX(10px);
+            transform: rotate(-70deg) translateX(10px);
     /* Przesuwa zmiotkę w prawo */
     left: 90%;
   }
 }
 
-@keyframes sweepOut {
+@keyframes sweep {
   0% {
-    transform: translateX(0);
+    -webkit-transform: rotate(15deg) translateX(-10px);
+            transform: rotate(15deg) translateX(-10px);
+    left: 10%;
+  }
+
+  100% {
+    -webkit-transform: rotate(-70deg) translateX(10px);
+            transform: rotate(-70deg) translateX(10px);
+    /* Przesuwa zmiotkę w prawo */
+    left: 90%;
+  }
+}
+
+@-webkit-keyframes sweepOut {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
     opacity: 1;
   }
 
   100% {
-    transform: translateX(150%);
+    -webkit-transform: translateX(150%);
+            transform: translateX(150%);
+    opacity: 0;
+  }
+}
+
+@keyframes sweepOut {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(150%);
+            transform: translateX(150%);
     opacity: 0;
   }
 }
@@ -96,7 +154,18 @@
 .phoneNumber {
   display: inline-block;
   opacity: 0;
-  animation: fadeIn 0.5s forwards 0.5s;
+  -webkit-animation: fadeIn 0.5s forwards 0.5s;
+          animation: fadeIn 0.5s forwards 0.5s;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
@@ -108,7 +177,6 @@
     opacity: 1;
   }
 }
-
 
 @media screen and (max-width: 480px) {
   .button{
