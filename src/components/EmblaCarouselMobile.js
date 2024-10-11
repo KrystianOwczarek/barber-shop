@@ -3,7 +3,7 @@ import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
 
-const EmblaCarousel = React.memo((props) => {
+const EmblaCarousel = (props) => {
   const { slides, options } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()])
 
@@ -20,6 +20,6 @@ const EmblaCarousel = React.memo((props) => {
       </div>
     </section>
   )
-})
+}
 
 export default EmblaCarousel
