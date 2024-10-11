@@ -8,11 +8,10 @@ import { useEffect, useState } from "react";
 import Button from "./Button";
 
 export default function Hero() {
-  const [isMobile, setIsMobile] = useState(false);
 
   const defaultOptions = {
-    loop: false,
-    autoplay: false,
+    loop: true,
+    autoplay: true,
     animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice"
@@ -20,24 +19,9 @@ export default function Hero() {
   };
 
   useEffect(() => {
-    // Set initial state of mobile
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 480);
-    };
-
-    // Listen for resize events
-    window.addEventListener('resize', handleResize);
-
-    // Clean up event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
     const scissors = document.querySelector('.scissors');
     if (scissors) {
-      const timeoutDuration = isMobile ? 2800 : 2350;
+      const timeoutDuration = 2500;
       const timeoutId = setTimeout(() => {
         scissors.classList.add('scissors-opacity');
       }, timeoutDuration);
@@ -45,7 +29,7 @@ export default function Hero() {
       // Clean up timeout on component unmount
       return () => clearTimeout(timeoutId);
     }
-  }, [isMobile]); // Add isMobile as a dependency
+  }, []); // Add isMobile as a dependency
 
   return (
     <div id="background-image">
@@ -69,9 +53,13 @@ export default function Hero() {
                 />
               </div>
             </div>
-            <p className="max-w-full text-2xl p-3 sm:p-0 mb-6 text-center text-white">
-              Profesjonalne usługi fryzjerstwa męskiego w przyjaznej atmosferze. Sprawdź moją ofertę, zobacz galerię {isMobile ? '' : <br/>} i umów się na wizytę.
+            <p className="flex sm:hidden max-w-full text-2xl p-3 sm:p-0 mb-6 text-center text-white">
+              Profesjonalne usługi fryzjerstwa męskiego w przyjaznej atmosferze. Sprawdź moją ofertę, zobacz galerię i umów się na wizytę.
             </p>
+            <p className="hidden sm:flex  max-w-full text-2xl p-3 sm:p-0 mb-6 text-center text-white">
+              Profesjonalne usługi fryzjerstwa męskiego w przyjaznej atmosferze. Sprawdź moją ofertę, zobacz galerię <br/> i umów się na wizytę.
+            </p>
+
             <div className="flex w-full flex-row justify-center align-center mb-6">
               <Button/>
             </div>

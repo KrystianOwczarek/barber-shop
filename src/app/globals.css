@@ -252,7 +252,12 @@ h6{
   border-radius: 0 25px 0 0;
 }
 
+.embla-mobile{
+  display: none;
+}
+
 .embla {
+  display: block;
   margin-top: 8rem;
   max-width: 100%;
   --slide-height: 100%;
@@ -1340,8 +1345,13 @@ li > p{
   #reviews .margin-bottom{
     margin-bottom: 78px;
   }
+  
+  .embla{
+    display: none;
+  }
 
   .embla-mobile {
+    display: block;
     max-width: 48rem;
     margin: auto;
     --slide-height: 19rem;

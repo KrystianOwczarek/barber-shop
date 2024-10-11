@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 export default function Gallery() {
   const OPTIONS = { align: 'start', loop: true };
   const [slides, setSlides] = useState([]);
-  const [windowWidth, setWindowWidth] = useState(0);
 
   const getImage = async () => {
     const response = await axios.get('https://barber-shop-strapi.onrender.com/api/upload/files?sort[0]=name');
@@ -20,21 +19,6 @@ export default function Gallery() {
 
   useEffect(() => {
     getImage();
-
-    // Set initial window width
-    setWindowWidth(window.innerWidth);
-
-    // Update window width on resize
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
   }, []);
 
   return (
@@ -49,11 +33,8 @@ export default function Gallery() {
       <p className="text-white text-lg sm:text-2xl margin-bottom text-center">
         Przeglądaj moje starannie wykonane fryzury i cięcia
       </p>
-      {windowWidth <= 480 ? (
         <EmblaCarouselMobile slides={slides} options={OPTIONS} />
-      ) : (
         <EmblaCarousel slides={slides} options={OPTIONS} />
-      )}
       <div className="box-4"></div>
     </section>
   );
