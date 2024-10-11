@@ -4,14 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import Lottie from 'react-lottie';
 import animationData from '/public/lotties/scissors.json';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Button from "./Button";
 
 export default function Hero() {
+  const [isMobile, setIsMobile] = useState(false);
 
   const defaultOptions = {
-    loop: true,
-    autoplay: true,
+    loop: false,
+    autoplay: false,
     animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice"
@@ -19,13 +20,32 @@ export default function Hero() {
   };
 
   useEffect(() => {
+    // Set initial state of mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+
+    // Listen for resize events
+    window.addEventListener('resize', handleResize);
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
     const scissors = document.querySelector('.scissors');
-    if(window.innerWidth <= 480){
-      setTimeout(() => { scissors.classList.add('scissors-opacity') }, 2800)
-    }else{
-      setTimeout(() => { scissors.classList.add('scissors-opacity') }, 2350)
+    if (scissors) {
+      const timeoutDuration = isMobile ? 2800 : 2350;
+      const timeoutId = setTimeout(() => {
+        scissors.classList.add('scissors-opacity');
+      }, timeoutDuration);
+
+      // Clean up timeout on component unmount
+      return () => clearTimeout(timeoutId);
     }
-  }, [])
+  }, [isMobile]); // Add isMobile as a dependency
 
   return (
     <div id="background-image">
@@ -41,19 +61,26 @@ export default function Hero() {
                 Odkryj swój styl
               </h1>
               <div className='scissors'>
-              <Lottie 
-                className='scissors-image'
-                options={defaultOptions}
-                height={70}
-                width={70}
+                <Lottie 
+                  className='scissors-image'
+                  options={defaultOptions}
+                  height={70}
+                  width={70}
                 />
-                </div>
+              </div>
             </div>
             <p className="max-w-full text-2xl p-3 sm:p-0 mb-6 text-center text-white">
-              Profesjonalne usługi fryzjerstwa męskiego w przyjaznej atmosferze. Sprawdź moją ofertę, zobacz galerię {window.innerWidth <= 480 ? '' : <br/>} i umów się na wizytę.
+              Profesjonalne usługi fryzjerstwa męskiego w przyjaznej atmosferze. Sprawdź moją ofertę, zobacz galerię {isMobile ? '' : <br/>} i umów się na wizytę.
             </p>
-            <div className="flex w-full flex-row justify-center align-center mb-6"><Button/></div>
-            <div className="flex w-full flex-col justify-center items-center mb-4"><p className="text-white text-center text-lg p-3 sm:p-0 mb-4">“Polecam z całego serca świetne podejście do klienta bardzo dobrze wykonane obcięcie”</p><p className="flex flex-row justify-center items-center text-white text-lg"><Image src='/image/profile_image.png' className="mr-3" alt='profile photo' width={40} height={40} />Kasia Dostatna</p></div>
+            <div className="flex w-full flex-row justify-center align-center mb-6">
+              <Button/>
+            </div>
+            <div className="flex w-full flex-col justify-center items-center mb-4">
+              <p className="text-white text-center text-lg p-3 sm:p-0 mb-4">“Polecam z całego serca świetne podejście do klienta bardzo dobrze wykonane obcięcie”</p>
+              <p className="flex flex-row justify-center items-center text-white text-lg">
+                <Image src='/image/profile_image.png' className="mr-3" alt='profile photo' width={40} height={40} />Kasia Dostatna
+              </p>
+            </div>
           </article>
         </section>
       </div>

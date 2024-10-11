@@ -7,7 +7,6 @@ export default function Prices() {
   const [hairObjects, setHairObjects] = useState([]);
   const [beardObject, setBeardObjects] = useState([]);
   const [comboObject, setComboObjects] = useState([]);
-  const [windowWidth, setWindowWidth] = useState(0);
 
   const getHairPrices = async () => {
     const response = await axios.get('https://barber-shop-strapi.onrender.com/api/uslugis');
@@ -28,22 +27,6 @@ export default function Prices() {
     getHairPrices();
     getBeardPrices();
     getComboPrices();
-
-    // Funkcja aktualizująca szerokość okna
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    // Dodaj listener dla zmiany rozmiaru okna
-    window.addEventListener('resize', handleResize);
-
-    // Ustaw początkową szerokość
-    handleResize();
-
-    // Usuń listener przy demontażu komponentu
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
   }, []);
 
   function calculateUnderscores(serviceName, price, index, type) {
