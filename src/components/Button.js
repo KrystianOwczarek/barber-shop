@@ -32,7 +32,7 @@ export default function Button() {
       {isSweeping && (
           <Image
             ref={broomRef}
-            src="/image/broom.png"
+            src="/image/broom.webp"
             alt="Zmiotka"
             className={styles.broom} // Dodajemy klasę animacji
             width={50}

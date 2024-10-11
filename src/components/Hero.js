@@ -66,7 +66,7 @@ export default function Hero() {
             <div className="flex w-full flex-col justify-center items-center mb-4">
               <p className="text-white text-center text-lg p-3 sm:p-0 mb-4">“Polecam z całego serca świetne podejście do klienta bardzo dobrze wykonane obcięcie”</p>
               <p className="flex flex-row justify-center items-center text-white text-lg">
-                <Image src='/image/profile_image.png' className="mr-3" alt='profile photo' width={40} height={40} loading='lazy' />Kasia Dostatna
+                <Image src='/image/profile_image.webp' className="mr-3" alt='profile photo' width={40} height={40} loading='lazy' />Kasia Dostatna
               </p>
             </div>
           </article>

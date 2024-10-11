@@ -1041,7 +1041,7 @@ li > p{
   position: relative;
   width: 152px;
   height: 32px;
-  background-image: url('/image/facebook-icon.png');
+  background-image: url('/image/facebook-icon.webp');
   background-size: cover;
   cursor: pointer;
   transition: all .3s ease;
@@ -1049,7 +1049,7 @@ li > p{
 }
 
 .image-6:hover{
-  background-image: url('/image/facebook-icon-2.png');
+  background-image: url('/image/facebook-icon-2.webp');
 }
 
     .tb_rc_rating_content, .tb_rc_text_post, .tb_rc_authorname, .tb_read_more_, .tb_rc_username, .tb_rc_time, .tb_post_modal_content.tb-cTBfont-, .tb_post_modal_view, .tb_post_view_ico.tb__icon.tb-arrow-right-alt, .tb_post_close_ico.tb__icon.tb-close-alt, .tb_post_modal_author_usrname, .tb_post_modal_author_handlename, .tb_post_modal_post_time, .tb_post_network_ico.tb__icon.tb-share-square, .tb_post_modal_share_button.tb__icon.tb-facebook, .tb_post_modal_share_button.tb__icon.tb-twitter, .tb_post_modal_share_button.tb__icon.tb-linkedin  {
@@ -1119,7 +1119,7 @@ li > p{
 }
 
 #background-image{
-  background-image: url(/image/background-1.png);
+  background-image: url(/image/background-1.webp);
   background-size: cover;
   max-width: 100%;
   width: 100%;
@@ -1128,7 +1128,7 @@ li > p{
 }
 
 #background-image-header{
-  background-image: url(/image/background-1.png);
+  background-image: url(/image/background-1.webp);
   background-size: cover;
   max-width: 100%;
   width: 100%;
@@ -1137,7 +1137,7 @@ li > p{
 }
 
 #background-image-2{
-  background-image: url(/image/background-2.png);
+  background-image: url(/image/background-2.webp);
   background-size: cover;
   max-width: 100%;
   width: 100%;
@@ -1145,7 +1145,7 @@ li > p{
 }
 
 #background-image-3{
-  background-image: url(/image/background-3.png);
+  background-image: url(/image/background-3.webp);
   background-size: cover;
   max-width: 100%;
   width: 100%;
@@ -1202,7 +1202,7 @@ li > p{
 
 @media screen and (max-width: 480px) {
   #background-image{
-    background-image: url(/image/background-1-mobile.png);
+    background-image: url(/image/background-1-mobile.webp);
   }
 
   #privacy-policy{
@@ -1214,7 +1214,7 @@ li > p{
   }
 
   #background-image-2{
-    background-image: url(/image/background-2.png);
+    background-image: url(/image/background-2.webp);
   }
 
   #hero{
@@ -1473,7 +1473,7 @@ li > p{
   }
 
   #background-image-3{
-    background-image: url(/image/background-3.png);
+    background-image: url(/image/background-3.webp);
   }
 
   #cta p{

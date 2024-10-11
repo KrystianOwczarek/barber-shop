@@ -131,7 +131,7 @@ export default function Prices() {
         <div className="flex flex-col justify-start sm:flex-row w-full">
           <div className="w-full sm:w-1/3 price-box">
             <div className="flex justify-center pt-6 items-center w-full h-1/3">
-              <Image className="image-3" src="/image/price-image-1.png" alt="barber hair image" width={174} height={174} loading='lazy' />
+              <Image className="image-3" src="/image/price-image-1.webp" alt="barber hair image" width={174} height={174} loading='lazy' />
             </div>
             <div className="length w-full p-5 h-2/3">
               {hairObjects && hairObjects.map((object, index) => {
@@ -156,7 +156,7 @@ export default function Prices() {
           </div>
           <div className="w-full sm:w-1/3 price-box">
             <div className="flex justify-center pt-6 items-center w-full h-1/3">
-              <Image className="image-3" src="/image/price-image-2.png" alt="barber hair image" width={174} height={174} loading='lazy' />
+              <Image className="image-3" src="/image/price-image-2.webp" alt="barber hair image" width={174} height={174} loading='lazy' />
             </div>
             <div className="length w-full p-5 h-2/3">
               {beardObject && beardObject.map((object, index) => {
@@ -170,7 +170,7 @@ export default function Prices() {
           </div>
           <div className="w-full sm:w-1/3 price-box">
             <div className="flex justify-center pt-6 items-center w-full h-1/3">
-              <Image className="image-3" src="/image/price-image-3.png" alt="barber hair image" width={174} height={174} loading='lazy' />
+              <Image className="image-3" src="/image/price-image-3.webp" alt="barber hair image" width={174} height={174} loading='lazy' />
             </div>
             <div className="length w-full p-5 h-2/3">
               {comboObject && comboObject.map((object, index) => {

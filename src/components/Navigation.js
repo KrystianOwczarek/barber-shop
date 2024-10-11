@@ -177,7 +177,7 @@ export default function Navigation() {
             </Link>
           </nav>
           </div>
-        <Link href='#hero'><div ref={circleRef} className='circle'><Image src='/image/down-arrow.png' alt='down arrow' width={28} height={16} loading='lazy' /></div></Link>
+        <Link href='#hero'><div ref={circleRef} className='circle'><Image src='/image/down-arrow.webp' alt='down arrow' width={28} height={16} loading='lazy' /></div></Link>
       </section>
     </header>
   );
