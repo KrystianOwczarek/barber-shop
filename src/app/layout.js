@@ -13,11 +13,6 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata = {
-  title: "Barber Shop | Raszków",
-  description: "Oferujemy najlepsze usługi fryzjerskie i kosmetyczne. Odkryj profesjonalizm i styl. Obejrzyj nasze projekty!",
-}
-
 export default function RootLayout({ children }) {
   return (
     <html lang="pl">
@@ -39,7 +34,6 @@ export default function RootLayout({ children }) {
       <link rel="shortcut icon" href="/favicon.ico" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <meta name="apple-mobile-web-app-title" content="Barber Shop | Raszków" />
-      <meta name="keywords" content="fryzjer męski raszków, fryzjer męski ostrów wielkopolski, fryzjer męski ostrów wlkp, fryzura fade, style fryzur, fryzury męskie cieniowane, salon fryzjerski raszków, salon fryzjerski, salon fryzjerski ostrów wielkopolski, salon fryzjerski ostrów wlkp, eleganccy mężczyźni, dobry fyzjer, dobry fryzjer raszków, dobry fryzjer ostrów wielkopolski, dobry fryzjer ostrów wlpk, barber shop raszków, barbershop raszków, barbershop, barbershopraszków, barber shop raszkow, barbershopraszkow, barbershop raszkow, fryzjer raszkow, fryzjer, fryzjer ostrów wielkopolski, fryzjer ostrow wielkopolski, fryzjer ostrow, fryzjer ostrów, barber shop ostrów wielkopolski, barbershop ostrów wielkopolski, barbershopostrówwielkopolski, barber shop ostrow wielkopolski, barbershopostrowwielkopolski, barbershop ostrow wielkopolski, barber raszków, barber raszkow, barberraszków, barberraszkow, barber ostrów wielkopolski, barber ostrow wielkopolski, barberostrowwielkopolski, haircuts, beard trimming, grooming services, classic haircuts, modern haircuts, shaves, men's grooming, hair styling, najlepszy barber Raszków, najlepszy barber Ostrów Wielkopolski, barber shop blisko mnie, barber shop w mojej okolicy, polecany barber Raszków, polecany barber Ostrów Wielkopolski, barber shop z najlepszymi opiniami, top barber shop Raszków, top barber shop Ostrów Wielkopolski, barber dla mężczyzn, stylizacja brody, strzyżenie brody, stylizacja włosów, profesjonalne strzyżenie, premium barber services, barber Raszków Ostrów Wielkopolski, barber shop wielkopolska, fryzjer męski Raszków, fryzjer męski Ostrów Wielkopolski" />
       <link rel="manifest" href="/site.webmanifest" />
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
