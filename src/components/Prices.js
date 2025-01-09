@@ -2,115 +2,27 @@
 import Image from "next/image";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { getAllServices } from '../../lib/api';
 
 export default function Prices() {
   const [hairObjects, setHairObjects] = useState([]);
   const [beardObject, setBeardObjects] = useState([]);
   const [comboObject, setComboObjects] = useState([]);
 
-  const getHairPrices = async () => {
-    //const response = await axios.get('https://barber-shop-strapi.onrender.com/api/uslugis');
-    const uslugi = [
-      {
-        id: 1,
-        nazwa_uslugi: "Strzyżenie włosów",
-        cena: 50
-      },
-      {
-        id: 2,
-        nazwa_uslugi: "Strzyżenie dzieci do lat 12",
-        cena: 38
-      },
-      {
-        id: 3,
-        nazwa_uslugi: "Strzyżenie włosów długich",
-        cena: 70
-      },
-      {
-        id: 4,
-        nazwa_uslugi: "Golenie głowy brzytwą",
-        cena: 50
-      },
-      {
-        id: 5,
-        nazwa_uslugi: "Stylizacja włosów",
-        cena: 25
-      },
-      {
-        id: 6,
-        nazwa_uslugi: "Odsiwanie włosów",
-        cena: 45
-      },
-      {
-        id: 7,
-        nazwa_uslugi: "Trwała - loki (Wycenia indywidualnie po wcześniejszej konsultacji)",
-      }
-    ];
-    //setHairObjects(response.data.data)
-    setHairObjects(uslugi);
-  };
-
-  const getBeardPrices = async () => {
-    //const response = await axios.get('https://barber-shop-strapi.onrender.com/api/uslugi-brodas');
-    const uslugi = [
-      {
-        id: 1,
-        nazwa_uslugi: "Strzyżenie brody",
-        cena: 45
-      },
-      {
-        id: 2,
-        nazwa_uslugi: "Odsiewianie brody",
-        cena: 45
-      },
-      {
-        id: 3,
-        nazwa_uslugi: "Strzyżenie brody + Odsiewianie brody",
-        cena: 85
-      }
-    ];
-    //setBeardObjects(response.data.data);
-    setBeardObjects(uslugi);
-  };
-
-  const getComboPrices = async () => {
-    //const response = await axios.get('https://barber-shop-strapi.onrender.com/api/uslugi-combos');
-    const uslugi = [
-      {
-        id: 1,
-        nazwa_uslugi: "Combo 1 Włosy + Trymowanie brody",
-        cena: 75
-      },
-      {
-        id: 2,
-        nazwa_uslugi: "Combo 1 + Trymowanie brody brzytwą",
-        cena: 85
-      },
-      {
-        id: 3,
-        nazwa_uslugi: "Woskowanie uszu",
-        cena: 15
-      },
-      {
-        id: 4,
-        nazwa_uslugi: "Woskowanie nosa",
-        cena: 15
-      },
-      {
-        id: 5,
-        nazwa_uslugi: "Woskowanie brwi",
-        cena: 15
-      }
-    ];
-    //setComboObjects(response.data.data);
-    setComboObjects(uslugi);
-  };
-
   useEffect(() => {
-    getHairPrices();
-    getBeardPrices();
-    getComboPrices();
-  }, []);
+    const getServices = async() => {
+      const services = await getAllServices();
+      const hairObjects = services.filter((service) => service.rodzaj === 'włosy').sort((a, b) => a.id - b.id);
+      const beardObject = services.filter((service) => service.rodzaj === 'broda').sort((a, b) => a.id - b.id);
+      const comboObject = services.filter((service) => service.rodzaj === 'combo').sort((a, b) => a.id - b.id);
+
+      setHairObjects(hairObjects);
+      setBeardObjects(beardObject);
+      setComboObjects(comboObject);
+    }
+  
+    getServices();
+  }, [])
 
   function calculateUnderscores(serviceName, price, index, type) {
     // Pobierz szerokość elementu
@@ -219,15 +131,15 @@ export default function Prices() {
             <div className="length w-full p-5 h-2/3">
               {hairObjects && hairObjects.map((object, index) => {
                 let idx, serviceName, individualPricing;
-                let result = calculateUnderscores(object.nazwa_uslugi.toUpperCase(), object.cena, index, 'hair');
+                let result = calculateUnderscores(object.nazwa.toUpperCase(), object.cena, index, 'hair');
 
-                if (object.nazwa_uslugi.toUpperCase() === 'TRWAŁA - LOKI (WYCENA INDYWIDUALNA PO WCZEŚNIEJSZEJ KONSULTACJI)') {
-                  idx = object.nazwa_uslugi.toUpperCase().indexOf('(');
-                  serviceName = object.nazwa_uslugi.toUpperCase().slice(0, idx);
-                  individualPricing = object.nazwa_uslugi.toUpperCase().slice(idx);
+                if (object.nazwa.toUpperCase() === 'TRWAŁA - LOKI (WYCENA INDYWIDUALNA PO WCZEŚNIEJSZEJ KONSULTACJI)') {
+                  idx = object.nazwa.toUpperCase().indexOf('(');
+                  serviceName = object.nazwa.toUpperCase().slice(0, idx);
+                  individualPricing = object.nazwa.toUpperCase().slice(idx);
                 }
 
-                return object.nazwa_uslugi.toUpperCase() === 'TRWAŁA - LOKI (WYCENA INDYWIDUALNA PO WCZEŚNIEJSZEJ KONSULTACJI)'
+                return object.nazwa.toUpperCase() === 'TRWAŁA - LOKI (WYCENA INDYWIDUALNA PO WCZEŚNIEJSZEJ KONSULTACJI)'
                   ? <div className="text-white mb-2.5 font-extrabold text-lg" key={object.id}>
                       {serviceName}<span className="barber-color">{individualPricing.toUpperCase()}</span>
                     </div>
@@ -243,7 +155,7 @@ export default function Prices() {
             </div>
             <div className="length w-full p-5 h-2/3">
               {beardObject && beardObject.map((object, index) => {
-                let result = calculateUnderscores(object.nazwa_uslugi.toUpperCase(), object.cena, index, 'beard');
+                let result = calculateUnderscores(object.nazwa.toUpperCase(), object.cena, index, 'beard');
 
                 return <div className="text-white mb-2.5 font-extrabold text-lg length" key={object.id}>
                       {result}
@@ -257,7 +169,7 @@ export default function Prices() {
             </div>
             <div className="length w-full p-5 h-2/3">
               {comboObject && comboObject.map((object, index) => {
-                let result = calculateUnderscores(object.nazwa_uslugi.toUpperCase(), object.cena, index, 'combo');
+                let result = calculateUnderscores(object.nazwa.toUpperCase(), object.cena, index, 'combo');
 
                 return <div className="text-white mb-2.5 font-extrabold text-lg length" key={object.id}>
                       {result}

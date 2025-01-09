@@ -2,6 +2,7 @@
 import dynamic from 'next/dynamic'
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { getAllImages } from '../../lib/api';
 
 export default function Gallery() {
   const DynamicEmblaCarousel = dynamic(() => import('./EmblaCarousel'), { ssr: false });
@@ -10,20 +11,18 @@ export default function Gallery() {
   const OPTIONS = { align: 'start', loop: true };
   const [slides, setSlides] = useState([]);
 
-
-  const getImage = async () => {
-    //const response = await axios.get('https://barber-shop-strapi.onrender.com/api/upload/files?sort[0]=name');
-    // const urlArray = response.data.map((res) => 
-    //   res.url ? 'https://barber-shop-strapi.onrender.com' + res.url : null
-    // ).filter(url => url); // Remove null values
-    const urlArray = [ '/gallery/1.jpeg', '/gallery/2.webp', '/gallery/3.webp', '/gallery/4.webp', '/gallery/5.webp', '/gallery/6.webp', '/gallery/7.jpeg', '/gallery/8.jpeg', '/gallery/9.webp'  ]
-    setSlides(urlArray);
-    console.log(urlArray)
-  };
-
   useEffect(() => {
-    getImage();
-  }, []);
+    const getImages = async() => {
+      const images = await getAllImages();
+      const urlArray = [];
+      images.sort((a,b) => a.id - b.id)
+      images.map((image) => urlArray.push(image.zdjcie.url))
+      console.log(urlArray)
+      setSlides(urlArray);
+    }
+  
+    getImages();
+  }, [])
 
   return (
     <section
