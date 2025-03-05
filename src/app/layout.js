@@ -14,6 +14,11 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+export const metadata = {
+  title: "Barber Shop | Raszków",
+  description: "Oferujemy najlepsze usługi fryzjerskie i kosmetyczne. Odkryj profesjonalizm i styl. Obejrzyj nasze projekty!",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="pl">
